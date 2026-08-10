@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>Database Migration Documentation</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333333; margin: 40px; }
+        h1 { color: #1E3A8A; border-bottom: 2px solid #1E3A8A; padding-bottom: 10px; font-size: 26px; }
+        h2 { color: #2563EB; margin-top: 30px; border-bottom: 1px solid #E5E7EB; padding-bottom: 5px; font-size: 20px; }
+        h3 { color: #1F2937; font-size: 16px; }
+        .meta-box { background-color: #F3F4F6; padding: 15px; border-left: 5px solid #1E3A8A; margin-bottom: 25px; }
+        .meta-box p { margin: 5px 0; font-weight: bold; }
+        code { background-color: #F8FAFC; border: 1px solid #E2E8F0; padding: 2px 6px; font-family: 'Consolas', monospace; font-size: 14px; color: #D946EF; border-radius: 4px; }
+        pre { background-color: #0F172A; color: #F8FAFC; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Consolas', monospace; font-size: 13px; line-height: 1.5; }
+        .note { background-color: #FEF3C7; border-left: 5px solid #F59E0B; padding: 12px; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #CBD5E1; padding: 10px; text-align: left; }
+        th { background-color: #F1F5F9; color: #1E3A8A; }
+    </style>
+</head>
+<body>
+
+    <h1>DATABASE MIGRATION DOCUMENTATION</h1>
+    
+    <div class="meta-box">
+        <p>Project: Unicon Dashboard v6</p>
+        <p>Source DB: AWS RDS MySQL (v8.2+)</p>
+        <p>Target DB: AWS RDS PostgreSQL</p>
+        <p>Migration Environment: Ubuntu Server (AWS EC2)</p>
+        <p>Prepared By: Ashok Sharma</p>
+        <p>Date: June 18, 2026</p>
+    </div>
+
+    <p>This official technical document outlines the step-by-step production migration strategy to safely transfer data from AWS RDS MySQL to AWS RDS PostgreSQL for the Unicon Dashboard application.</p>
+
+    <h2>1. Pre-Requisites & Network Authorization</h2>
+    <p>Before initiating the data migration process, proper network access control must be configured within the AWS Management Console to allow traffic between the EC2 instances and RDS components.</p>
+    
+    <h3>1.1 AWS Security Group Adjustments</h3>
+    <table>
+        <tr>
+            <th>Security Group Target</th>
+            <th>Protocol/Port</th>
+            <th>Source Rule Requirement</th>
+        </tr>
+        <tr>
+            <td><b>PostgreSQL RDS SG</b></td>
+            <td>TCP / 5432</td>
+            <td>Allow Inbound from Django EC2 Instance IP / SG</td>
+        </tr>
+        <tr>
+            <td><b>MySQL RDS SG</b></td>
+            <td>TCP / 3306</td>
+            <td>Allow Inbound from Django EC2 Instance IP / SG</td>
+        </tr>
+    </table>
+
+    <h3>1.2 Core System Package Installation</h3>
+    <p>Connect to the AWS EC2 Ubuntu instance via SSH and execute the following system upgrades and utilities:</p>
+    <pre>sudo apt update
+sudo apt install postgresql-client pgloader tmux -y</pre>
+
+    <h3>1.3 Virtual Environment Syncing</h3>
+    <p>Navigate to the Django project path, activate the isolated environment, and install the native PostgreSQL interface driver:</p>
+    <pre>cd /home/ubuntu/python_pro/version_6/unicon-dashboard-django-v6
+source env/bin/activate
+pip install psycopg2-binary
+pip freeze > requirements.txt</pre>
+
+    <h2>2. Database Authentication Compatibility Fix</h2>
+    <p>MySQL version 8.2+ enforces <code>caching_sha2_password</code> encryption protocols as default, which creates handshake conflicts with standard <code>pgloader</code> binaries. To safely bypass this limitation, update the migration database user account to fall back to the native protocol.</p>
+    <p>Connect to the AWS RDS MySQL cluster using an administrative terminal and run the following commands:</p>
+    <pre>ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'Unicon_Production_2026!';
+FLUSH PRIVILEGES;
+EXIT;</pre>
+    <div class="note">
+        <strong>⚠️ CRITICAL SECURITY NOTE:</strong> Do not use characters like <code>@</code> or <code>/</code> inside the production database password phrase. This will corrupt the standard DSN structure format used by connection orchestrators. Use symbols like <code>!</code> or <code>_</code> instead.
+    </div>
+
+    <h2>3. Target Database Structure Initialization</h2>
+    <p>Before loading rows, a precise relational structural grid must exist inside the target PostgreSQL database instance.</p>
+    
+    <h3>3.1 Django Project Configuration Updates</h3>
+    <p>Modify the active configuration dictionary within <code>settings.py</code> to connect directly with the destination PostgreSQL instance:</p>
+    <pre>DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'unicon_new',
+        'USER': 'postgres',
+        'PASSWORD': 'your_postgres_password',
+        'HOST': 'your-postgres-rds-endpoint.amazonaws.com',
+        'PORT': '5432',
+    }
+}</pre>
+
+    <h3>3.2 Schema Architecture Migration</h3>
+    <p>Run the native schema generator to map model blueprints into PostgreSQL tables:</p>
+    <pre>python manage.py migrate</pre>
+
+    <h3>3.3 Purging Autogenerated Meta-Rows</h3>
+    <p>Django automatically populates system rows into metadata tables during the bootstrap process. To avoid <code>Duplicate Key / Unique Constraint</code> errors during data population, log into the target Postgres container and flush these records:</p>
+    <pre>TRUNCATE TABLE django_content_type, auth_permission, django_migrations RESTART IDENTITY CASCADE;</pre>
+
+    <h2>4. Executing pgloader Core Data Pipeline</h2>
+    
+    <h3>4.1 Script Blueprint Configuration (<code>migrate.load</code>)</h3>
+    <p>Create a migration pipeline control script named <code>migrate.load</code> in the project root directory:</p>
+    <pre>LOAD DATABASE
+     FROM mysql://root:Unicon_Production_2026!@your-mysql-rds-endpoint.amazonaws.com:3306/unicon_new
+     INTO postgresql://postgres:your_postgres_password@your-postgres-rds-endpoint.amazonaws.com:5432/unicon_new
+
+ WITH include drop, reset sequences, data only
+
+  SET client_encoding = 'utf8';</pre>
+
+    <h3>4.2 Background Multiplexing Execution via tmux</h3>
+    <p>Since production data scales beyond ~2 GiB across 114 distinct structural modules, network timeouts or terminal disruptions might crash active instances. Utilize <code>tmux</code> abstraction layers to protect the transmission path:</p>
+    <pre># Initialize a secure terminal multiplexer layer
+tmux new -s db_migration
+
+# Launch the native binary streaming pipeline
+pgloader migrate.load</pre>
+    <p><i>If the active SSH context drops out mid-operation, reconnect to the server and re-attach to the thread via <code>tmux attach -s db_migration</code> to safely monitor the operation results summary.</i></p>
+
+    <h2>5. Post-Migration Sync and Auto-Increment Reset</h2>
+    <p>Once all row elements are successfully mirrored, internal PostgreSQL relational reference matrices and sequence indexes must be forced back into synchronicity to clear errors during subsequent application inserts.</p>
+    <p>Execute the query builder pipeline directly from the virtual environment terminal wrapper:</p>
+    <pre>python manage.py sqlsequencereset ALL | python manage.py dbshell</pre>
+
+    <h3>5.1 Verification Checklist</h3>
+    <ul>
+        <li>Confirm schema reflects exactly 114 standard tables inside PostgreSQL.</li>
+        <li>Validate critical operational structures containing extensive <code>ForeignKey</code> connections.</li>
+        <li>Run the application worker instances via <code>python manage.py runserver 0.0.0.0:5000</code> to confirm absolute structural integrity.</li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local & Desktop Project Dashboard</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+            margin: 40px auto;
+            max-width: 1400px;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f2937;
+            background: #e5e7eb;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        th,
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+
+        tr:hover {
+            background-color: #f9fafb;
+        }
+
+        td code {
+            background-color: #f3f4f6;
+            padding: 4px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #2563eb;
+            display: inline-block;
+            word-break: break-all;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Helper section table */
+        .helper-table td:first-child {
+            font-weight: 600;
+            color: #1f2937;
+            width: 20%;
+            background-color: #f9fafb;
+        }
+
+        .helper-table td {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 13px;
+            margin-top: 40px;
+        }
+
+        .section-divider {
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, #2563eb, #06b6d4);
+            margin-bottom: 20px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h2>🧰 Quick Reference Commands <span style="float: right;"><button onclick="logout()">Logout</button></span></h2>
+    <div class="section-divider"></div>
+
+    <table class="helper-table">
+        <tbody>
+            <tr>
+                <td>Login Desktop sudo systemctl start redis-server</td>
+                <td><code>ssh csg@192.168.1.11</code></td>
+                <td><code>csgTech@2025</code></td>
+                <td><code>sudo systemctl restart mysql</code></td>
+            </tr>
+            <tr>
+                <td>Kill Project</td>
+                <td><code>sudo lsof -i:9000</code></td>
+                <td><code>sudo kill -9 $(sudo lsof -t -i:9000)</code></td>
+                <td><code>sudo kill -9 4176784</code></td>
+            </tr>
+            <tr>
+                <td>Create Environment</td>
+                <td><code>python3 -m venv env</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python manage.py collectstatic</code></td>
+            </tr>
+            <tr>
+                <td>Login Git</td>
+                <td><code>csg.ashok</code></td>
+                <td><code>cACPtXO8v@258963!</code></td>
+                <td><code>git merge --no-ff origin/feature</code></td>
+            </tr>
+            <tr>
+                <td>Check Running Ports</td>
+                <td><code>ps aux | grep runserver</code></td>
+                <td>View Log</td>
+                <td><code>tail -f server.log</code></td>
+            </tr>
+            <tr>
+                <td>Database Read Only</td>
+                <td><code>SET GLOBAL read_only = OFF;</code></td>
+                <td><code>SET GLOBAL super_read_only = OFF;</code></td>
+                <td>
+                    <code>Allow Port:</code><br><code>sudo ufw allow from 192.168.1.8 to any port 3306</code><br>
+                    <code>sudo ufw allow 8001<br>
+                    sudo ufw allow 8002<br>
+                    sudo ufw allow 8003<br>
+                    sudo ufw reload<br>
+                    </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Database Check Connection</td>
+                <td><code>SHOW VARIABLES LIKE 'max_connections';</code></td>
+                <td><code>SET GLOBAL max_connections = 5000;</code></td>
+                <td><code>SHOW PROCESSLIST;</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+     <h2>💻 Desktop System Development Projects</h2>
+    <div class="section-divider"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Project Name</th>
+                <th>Directory Path</th>
+                <th>Environment Activation</th>
+                <th>Run Command</th>
+                <th>Port / Host</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Unicon International Dashboard</td>
+                <td><code>cd /mnt/mydata/python/unicon/unicon-international-dashboard</code></td>
+                <td><code>source venv/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:5000 --noreload > local.log 2>&1 &</code></td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Avantika Dashboard</td>
+                <td><code>cd /mnt/mydata/python/unicon/avantika/avantika-dashboard</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:5300 > local.log 2>&1 &</code></td>
+                <td>5300</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Unicon International I-API</td>
+                <td><code>cd /mnt/mydata/python/unicon/unicon-international-i-api</code></td>
+                <td><code>source venv/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:7000 > server.log 2>&1 &</code></td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Unicon International O-API</td>
+                <td><code>cd /mnt/mydata/python/unicon/unicon-internation-o-api</code></td>
+                <td><code>source venv/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &</code></td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Unicon Scheduler</td>
+                <td><code>cd /mnt/mydata/python/unicon/unicon-scheduler</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:9000 --noreload > server.log 2>&1 &</code></td>
+                <td>9000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Ashok Project</td>
+                <td><code>cd /mnt/mydata/python/unicon/ashok</code></td>
+                <td><code>source venv/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8400 > server.log 2>&1 &</code></td>
+                <td>8400</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nipun by CSG</td>
+                <td><code>cd /mnt/mydata/python/unicon/nipun-by-csg</code></td>
+                <td><code>source venv/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8084 > server.log 2>&1 &</code></td>
+                <td>8084</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Fraud Prevention System</td>
+                <td><code>cd /mnt/mydata/python/fraud-prevention-system</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8333 > server.log 2>&1 &</code></td>
+                <td>8333</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Negative Database System</td>
+                <td><code>cd /mnt/mydata/python/negative-database-system</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8456 > server.log 2>&1 &</code></td>
+                <td>8456</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>IDFC Bank Statement</td>
+                <td><code>cd /mnt/mydata/python/idfcBankStmt</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8088 > server.log 2>&1 &</code></td>
+                <td>8088</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Nexus</td>
+                <td><code>cd /mnt/mydata/python/nexus</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>nohup python3 manage.py runserver 0.0.0.0:8085 > server.log 2>&1 &</code></td>
+                <td>8085</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td>PG Testing (Laravel)</td>
+                <td><code>cd /mnt/mydata/html/pg_testing</code></td>
+                <td>—</td>
+                <td><code>nohup php artisan serve --host 192.168.1.10 --port 8200 > server.log 2>&1 &</code></td>
+                <td>8200 (PHP)</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Remittance Pro Latest (Laravel)</td>
+                <td><code>/var/www/html/remitance-pro-latest</code></td>
+                <td>—</td>
+                <td><code>nohup php artisan serve --host=0.0.0.0 --port=9999 > server.log 2>&1 &</code></td>
+                <td>9999 (PHP)</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Orivo Backend Python</td>
+                <td><code>cd /mnt/mydata/python/orivo-backend-python</code></td>
+                <td><code>—</code></td>
+                <td><code>docker compose up -d --build</code></td>
+                <td>8005</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>🚀 Local Development Projects</h2>
+    <div class="section-divider"></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Project Name</th>
+                <th>Directory Path</th>
+                <th>Environment Activation</th>
+                <th>Run Command</th>
+                <th>Port / Host</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Unicon International Dashboard</td>
+                <td><code>cd python_pro/unicon-international-dashboard</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:5000</code></td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Unicon International I-API</td>
+                <td><code>cd python_pro/unicon-international-i-api</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:7000</code></td>
+                <td>7000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Unicon International O-API</td>
+                <td><code>cd python_pro/unicon-internation-o-api</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td>
+                    <code>python3 manage.py runserver 0.0.0.0:8000</code><br>
+                    <code>celery -A csg_payout worker -l info -Q cag_payout_queue --concurrency=6</code><br>
+                    <code>celery -A csg_payout beat --loglevel=info</code><br>
+                    <code>pkill -9 -f celery</code><br>
+                    <code>redis-cli ping </code>
+                </td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Unicon Scheduler</td>
+                <td><code>cd python_pro/unicon-scheduler</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td>
+                    <code>python3 manage.py runserver 0.0.0.0:9000</code><br>
+                    <code>celery -A csg_scheduler worker -l info -Q csg_scheduler_queue --concurrency=6</code><br>
+                    <code>celery -A csg_scheduler beat --loglevel=info</code><br>
+                    <code>pkill -9 -f celery</code><br>
+                    <code>redis-cli ping </code>
+                </td>
+                <td>9000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Ashok Project</td>
+                <td><code>cd python_pro/ashok</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8400</code></td>
+                <td>8400</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>PG Testing (Laravel)</td>
+                <td><code>cd /var/www/html/pg_testing/</code></td>
+                <td>—</td>
+                <td><code>php artisan serve --host 192.168.1.10 --port 8200</code></td>
+                <td>8200 (PHP)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Nipun by CSG</td>
+                <td><code>cd python_pro/nipun-by-csg</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8084</code></td>
+                <td>8084</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Nipun by CSG (Sirf Shopping)</td>
+                <td><code>cd python_pro/nipun-by-csg-sirf-shopping</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8082</code></td>
+                <td>8082</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Blacklist</td>
+                <td><code>cd python_pro/blacklist</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8083</code></td>
+                <td>8083</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Eastman Export CRM Web</td>
+                <td><code>cd python_pro/eastman-export-crm-web</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:7410</code></td>
+                <td>7410</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Nexus</td>
+                <td><code>cd python_pro/nexus</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8085</code></td>
+                <td>8085</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>AI</td>
+                <td><code>cd python_pro/AI</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver 0.0.0.0:8086</code></td>
+                <td>8086</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Aaditya Project</td>
+                <td><code>cd python_pro/Aaditya/ai_interviewer_project</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td><code>python3 manage.py runserver</code><br><code>celery -A ai_interviewer_project worker --loglevel=debug --pool=solo -Q default,resume_high,tts_high,cleanup_low,analytics_medium</code><br><code>celery -A ai_interviewer_project beat --loglevel=info</code><br><code>redis-cli</code>
+                </td>
+                <td>8085</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Unicon Payout API Version 6</td>
+                <td><code>cd python_pro/version_6/unicon-payout-django-v6</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td>
+                    <code>python3 manage.py runserver 0.0.0.0:8000</code><br>
+                    <code>celery -A csg_payout worker -l info -Q cag_payout_queue --concurrency=6</code><br>
+                    <code>celery -A csg_payout beat --loglevel=info</code><br>
+                    <code>pkill -9 -f celery</code><br>
+                    <code>redis-cli ping </code>
+                </td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Unicon Scheduler Version 6</td>
+                <td><code>cd python_pro/version_6/unicon-scheduler-django-v6</code></td>
+                <td><code>source env/bin/activate</code></td>
+                <td>
+                    <code>python3 manage.py runserver 0.0.0.0:9000</code><br>
+                    <code>celery -A csg_scheduler worker -l info -Q csg_scheduler_queue --concurrency=6</code><br>
+                    <code> celery -A csg_scheduler beat --loglevel=info</code><br>
+                    <code>pkill -9 -f celery</code><br>
+                    <code>redis-cli ping </code>
+                </td>
+                <td>8000</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>🚀 Mysql Queries</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Table Name</th>
+                <th>Query</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Merchant</td>
+                <td><code>SELECT `id`, `merchant_id`, `reversal_type`, `token_time`, `is_active`, `user_id` FROM `merchants`;</code></td>
+            </tr>
+            <tr>
+                <td>Web Info</td>
+                <td><code>SELECT `id`, `is_active`, `deployment`, `dashboard_url`, `payin_url`, `payout_url`, `scheduler_url` FROM `web_info`;</code></td>
+            </tr>
+            <tr>
+                <td>payout by acquirer id</td>
+                <td><code>SELECT `id`, `acquirer_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE `acquirer_id` in (327877845391, 995081714375) and `status_id`  IN (330294404959, 400189050031, 501628475024, 510440056445);</code></td>
+            </tr>
+            <tr>
+                <td>payout get by status</td>
+                <td><code>SELECT `id`, `currency`, `pay_mode`, `sub_pay_mode`, `merchant_id`, `status_id`, `created_at` FROM `txn_payouts` WHERE `txn_payouts`.`status_id` IN (189061784014, 651148842461);</code></td>
+            </tr>
+            <tr>
+                <td>payout update status</td>
+                <td><code>UPDATE `txn_payouts` SET `status_id` = '604908454283' WHERE `txn_payouts`.`status_id` IN (189061784014, 651148842461);</code></td>
+            </tr>
+            <tr>
+                <td>Update Status Query</td>
+                <td><code>UPDATE `txn_payouts` SET `status_id` = '538589394873' WHERE `txn_payouts`.`status_id` = 651148842461;</code></td>
+            </tr>
+            <tr>
+                <td>payin by date range</td>
+                <td><code>SELECT `id`, `order_id`, `txn_id`,  `sub_txn_id`, `acq_ref_id`, `acquirer_id`, `merchant_id`, `status_id`, `created_at` FROM `txn_payin` WHERE `acq_ref_id` = '' AND `created_at` > '2025-07-12 11:50:08.019181' ORDER BY `txn_payin`.`created_at` ASC </code></td>
+            </tr>
+            <tr>
+                <td>payin by id</td>
+                <td><code>SELECT `id`, `txn_id`, `sub_txn_id`, `source`, `created_at`, `acquirer_id`, `merchant_id`, `status_id`, `sdf1` FROM `txn_payin` WHERE `id` = 523097728091;</code></td>
+            </tr>
+            <tr>
+                <td>payin update status</td>
+                <td><code>UPDATE `txn_payin` SET `status_id` = '330294404959' WHERE `merchant_id` = 'iAbYwO0kvUHxazo' and `status_id` = 139428748779; </code></td>
+            </tr>
+            <tr>
+                <td>Truncate Ticket </td>
+                <td><code>DELETE FROM `concern_history`; <br>DELETE FROM `concern_reply`; <br>DELETE FROM `concern`; <br></code></td>
+            </tr>
+            <tr>
+                <td>Salary Component Template</td>
+                <td><code>SELECT `salary_component`.`name`, `salary_component`.`code`, `template_component`.`is_earning`, `template_component`.`calc_type`, `template_component`.`calc_value`, `template_component`.`calc_gross`, `template_component`.`based_on_id`, `template_component`.`formula` FROM `template_component` JOIN `salary_component` ON `salary_component`.`id` = `template_component`.`component_id` WHERE `template_id` = 680307646336 ORDER BY `salary_component`.`created_at` ASC; </code></td>
+            </tr>
+            <tr>
+                <td>Wen Info deployment</td>
+                <td><code>SELECT `id`, `is_active`, `user_id`, `deployment` FROM `web_info` WHERE `user_id` = 1; </code></td>
+            </tr>
+            <tr>
+                <td>Payout Query</td>
+                <td>
+                    <code>SELECT `id`, `order_id`, `txn_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE `status_id` = 651148842461;</code><br><br>
+                    <code>UPDATE `merchants` SET `is_active` = '1' WHERE `merchants`.`id` = 589967054361;</code><br><br>
+                    <code>UPDATE `txn_payouts` SET `status_id` = '330294404959' WHERE `status_id` = 651148842461;</code><br><br>
+                    <code>SELECT `id`, `reversal_type`, `merchant_id`, `is_active` FROM `merchants` WHERE `merchant_id` in ('iAbYwO0kvUHxazo', 'UMB24BA6GOYQNDA', 'UMTW2TWWLB8GVJN', 'UMWOXZ2UPRUNFOB', 'UMPCR6J6MBNB15X', 'UMAIB3Q7O659IW4', 'UM6Y4G44DVTTSCE', 'UMB6O1Z5C4C164W', 'UMU7AV369LJWPD1', 'UMNEOHB5DZ5X5SK', 'UMH5EXR1CJXWTV5', 'UMRBSZ0GVGZJ7N9', 'UMSHQ5SKRQ8IPVH', 'UM89JJUFQ8T0RBP', 'UM41B8A2I0UTSHA', 'UMOZFP2BMEEQ3PR', 'UMX4XG2TJF6CVAE');</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Attendance Query</td>
+                <td>
+                    <code>SELECT `id`, `in_date`, `status`, `in_date_time`, `emp_id`, `created_at`, `late`, `absent`, `half_day`, `out_date_time`, `user_id`, `emp_id` FROM `attendance` WHERE `emp_id` = 3 ORDER BY `attendance`.`created_at` DESC</code>
+                    <code>SELECT `id`, `emp_code`, `Join_date`, `exit_date`, `sl`, `cl`, `el`, `created_at`, `info_id`, `user_id`, `shift_id` FROM `auth_employee` WHERE `id` = 376364084738 ORDER BY `auth_employee`.`created_at` ASC; </code>
+                </td>
+            </tr>
+            <tr>
+                <td>Product Query</td>
+                <td>
+                    <code>SELECT `id`, `title`, `sku`, `mrp`, `sale_price`, `inventory`, `negative_inv`, `notify_qty`, `is_active`, `batch`, `expiry`, `parent`, `product_id` FROM `product_inventory` WHERE `product_id` = 224854368651;</code>
+                    <code></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Inport SQL Command</td>
+                <td>
+                    <code>mysql -u root -p unicon_satyam < /var/www/html/unicon_new.sql</code>
+                </td>
+            </tr>
+            <tr>
+                <td>AI Gemini Google</td>
+                <td>
+                    <code>https://gemini.google.com/u/3/app</code><br>
+                    <code>Tushank API KEY : AIzaSyAMo3vBjc-bbakpYbM_drUuyvosC4CQj1c</code><br>
+                    <code>https://ai.google.dev/gemini-api/docs</code>
+                </td>
+            </tr>
+            <tr>
+                <td>AI chatgpt</td>
+                <td>
+                    <code>https://chatgpt.com/</code>
+                    <code>https://platform.openai.com/docs/quickstart?language=python</code>
+                </td>
+            </tr>
+            <tr>
+                <td>AI minimax</td>
+                <td>
+                    <code>https://agent.minimax.io/</code><br>
+                    <code>API KEY : eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJhc2hvayBzaGFybWEiLCJVc2VyTmFtZSI6IkRldmVsb3BlciBQcm9qZWN0IiwiQWNjb3VudCI6IiIsIlN1YmplY3RJRCI6IjIwMDE1NTE2NTIzMTM2MzM2ODIiLCJQaG9uZSI6IiIsIkdyb3VwSUQiOiIyMDAxNTUxNjUyMzA5NDQzNDc0IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoic2hhcm1hLjkwLmFzaG9rQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEyLTE4IDIxOjEyOjE5IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.LbdlZERnUokKYSbko-58JRkETFO3q8wICGfbTflX69Pe8_Xxz2PdL-WmxgmhlOYJeAmGC9n11RUEZtQVf8qwCYY31DukAQUNZG6Z2imxscFMyr9cQj1V8aB_a232TRXyN5Xz8mQIanurqjPK23b7NCKnHW0Jlh8I5MyVSn7tKvv18UnY9-LbTaP_mKfZ6PHC9Y7MbnX_bhso0mpGAdw6bAuMfNsksVotwN9MvYTPi4MVA3ZH5I3k3YHM0hgefRM07LKvV9djP-s4HpflLswJuhVAqWsQ6QW-WxsF2DpbnhFCmYDcebqRJIMybHs5Gk4k0kuRZcUKBhABM3GIi14CpA</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Postgress Database</td>
+                <td>
+                    <code>http://192.168.1.11/pgadmin4/browser/ </code><br>
+                    <code>Username: info@csgtech.in</code><br>
+                    <code>Password: pgadmin</code><br>
+                    <code>'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER': 'postgres','PASSWORD': 'pgadmin','HOST': 'localhost','PORT': '5432'}</code><br>
+                    <code>connect with command : psql -h 192.168.1.11 -U postgres</code><br>
+                    <code>Create Database Query : CREATE DATABASE django_auth;</code>
+                </td>
+            </tr>
+            <tr>
+                <td>Type Script Commands</td>
+                <td>
+                    compile ts file : <code>tsc app.ts --watch </code><br>
+                    compile all ts file : <code>tsc *.ts -w</code><br>
+                    execute js  file<code>tsc app.ts --watch</code><br>
+                </td>
+            </tr>
+            <tr>
+                <td>Type Script Commands</td>
+                <td>
+                    Check all Running Services <code>systemctl list-units --type=service --state=running</code><br>
+                    Stop Ollama: <code>sudo systemctl stop ollama.service</code><br>
+                    Start Ollama : <code>sudo systemctl start ollama.service</code><br>
+                    Disable Ollama : <code>sudo systemctl disable ollama.service</code><br>
+                    Status Ollama : <code>systemctl status ollama.service</code>
+                </td>
+            </tr>
+        </body>
+    </table>
+
+    http://localhost/unicon_new_structure.sql
+    <footer>
+        © 2025 Local Development Dashboard — Organized by Ashok Sharma
+    </footer>
+<script>
+    function logout() {
+        // This sends a background request with a fake username 'logout'
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "./", true, "logout", "wrong_password");
+        xmlhttp.send("");
+        
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4) {
+                // After the fake login fails, we refresh the page
+                window.location.reload();
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
+
+

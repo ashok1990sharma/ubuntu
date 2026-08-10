@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Development Dashboard</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #ffffff;
+      font-family: Montserrat, Arial, sans-serif;
+    }
+
+    .desktop {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .frame {
+      position: relative;
+      width: 100%;
+      max-width: 1920px;
+      min-width: 820px;
+      min-height: 720px;
+      overflow: hidden;
+      background-color: #d9e8ff;
+      background-image: url("data:image/svg+xml,%3Csvg%20width%3D%271990%27%20height%3D%271200%27%20viewBox%3D%270%200%201990%201200%27%20fill%3D%27none%27%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%3E%3Cg%20clip-path%3D%27url(%23clip0_715_251)%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27url(%23paint0_radial_715_251)%27/%3E%3Cmask%20id%3D%27mask0_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask0_715_251)%27%3E%3Cpath%20d%3D%27M819.56%20580.571L605.771%201472L1460.93%201449.14L819.56%20580.571Z%27%20fill%3D%27url(%23paint1_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask1_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask1_715_251)%27%3E%3Cpath%20d%3D%27M8.50499%200L542.09%201184L-217.541%20580.571L8.50499%200Z%27%20fill%3D%27url(%23paint2_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask2_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask2_715_251)%27%3E%3Cpath%20d%3D%27M815.011%20580.571L523.326%201214.29L630.788%201423.43L815.011%20580.571Z%27%20fill%3D%27url(%23paint3_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask3_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask3_715_251)%27%3E%3Cpath%20d%3D%27M1666.75%201428.57C1667.89%201421.71%201923.19%20960%201923.19%20960L1211.88%201288L1408.62%201556.57L1666.75%201428.57Z%27%20fill%3D%27url(%23paint4_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask4_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask4_715_251)%27%3E%3Cpath%20d%3D%27M1652.54%20772L1256.8%201288L1041.88%20950.286L1652.54%20772Z%27%20fill%3D%27url(%23paint5_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask5_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask5_715_251)%27%3E%3Cpath%20d%3D%27M1502.17%20-11.8462L1379.05%20635.429L1633.78%20749.714L1502.17%20-11.8462Z%27%20fill%3D%27url(%23paint6_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask6_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask6_715_251)%27%3E%3Cpath%20d%3D%27M1070.88%20310.857L1633.78%20749.714L789.994%20562.562L1070.88%20310.857Z%27%20fill%3D%27url(%23paint7_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask7_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask7_715_251)%27%3E%3Cpath%20d%3D%27M-162.957%20-123.429L815.012%20580.571L1742.94%20-219.429L-162.957%20-123.429Z%27%20fill%3D%27url(%23paint8_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask8_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask8_715_251)%27%3E%3Cpath%20d%3D%27M1483.67%20-100.571L1633.78%20749.714L1715.65%20777.143L1965.83%20406.857L1483.67%20-100.571Z%27%20fill%3D%27url(%23paint9_linear_715_251)%27/%3E%3C/g%3E%3Cmask%20id%3D%27mask9_715_251%27%20style%3D%27mask-type%3Aluminance%27%20maskUnits%3D%27userSpaceOnUse%27%20x%3D%270%27%20y%3D%270%27%20width%3D%271991%27%20height%3D%271200%27%3E%3Cpath%20d%3D%27M1990.05%200H0V1200H1990.05V0Z%27%20fill%3D%27white%27/%3E%3C/mask%3E%3Cg%20mask%3D%27url(%23mask9_715_251)%27%3E%3Cpath%20d%3D%27M1666.75%20763.429L2179.62%2034.2861L2143.23%201062.86L1666.75%20763.429Z%27%20fill%3D%27url(%23paint10_linear_715_251)%27/%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3CradialGradient%20id%3D%27paint0_radial_715_251%27%20cx%3D%270%27%20cy%3D%270%27%20r%3D%271%27%20gradientUnits%3D%27userSpaceOnUse%27%20gradientTransform%3D%27translate(995.026%20600)%20scale(905.112%20909.618)%27%3E%3Cstop%20stop-color%3D%27%2388B6FF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23D9E8FF%27/%3E%3C/radialGradient%3E%3ClinearGradient%20id%3D%27paint1_linear_715_251%27%20x1%3D%27981.949%27%20y1%3D%27716.633%27%20x2%3D%271025.37%27%20y2%3D%271345.05%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint2_linear_715_251%27%20x1%3D%27-217.541%27%20y1%3D%27592%27%20x2%3D%27542.09%27%20y2%3D%27592%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint3_linear_715_251%27%20x1%3D%27523.326%27%20y1%3D%271002%27%20x2%3D%27815.011%27%20y2%3D%271002%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint4_linear_715_251%27%20x1%3D%271566.92%27%20y1%3D%271131.1%27%20x2%3D%271534.93%27%20y2%3D%271501.25%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint5_linear_715_251%27%20x1%3D%271208.69%27%20y1%3D%271061.69%27%20x2%3D%271637.46%27%20y2%3D%27646.604%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint6_linear_715_251%27%20x1%3D%271379.05%27%20y1%3D%27368.934%27%20x2%3D%271633.78%27%20y2%3D%27368.934%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint7_linear_715_251%27%20x1%3D%271365.38%27%20y1%3D%27680.812%27%20x2%3D%27919.362%27%20y2%3D%27430.496%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint8_linear_715_251%27%20x1%3D%271060.85%27%20y1%3D%27338.419%27%20x2%3D%27828.202%27%20y2%3D%27-99.5079%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint9_linear_715_251%27%20x1%3D%271670.53%27%20y1%3D%27375.761%27%20x2%3D%271807.57%27%20y2%3D%27590.463%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3ClinearGradient%20id%3D%27paint10_linear_715_251%27%20x1%3D%271666.75%27%20y1%3D%27548.572%27%20x2%3D%272179.62%27%20y2%3D%27548.572%27%20gradientUnits%3D%27userSpaceOnUse%27%3E%3Cstop%20stop-color%3D%27%23C6DCFF%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%2388B6FF%27/%3E%3C/linearGradient%3E%3CclipPath%20id%3D%27clip0_715_251%27%3E%3Crect%20width%3D%271990%27%20height%3D%271200%27%20fill%3D%27white%27/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.14);
+      z-index: 0;
+    }
+
+    .frame-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 720px;
+      padding: 60px 120px 20px;
+      gap: 40px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .brace {
+      flex: 1;
+      font-size: 60px;
+      font-weight: 600;
+      color: #6033ff;
+      line-height: 1.2;
+    }
+
+    .brace.left {
+      text-align: right;
+    }
+
+    .brace.right {
+      text-align: left;
+    }
+
+    .title-box {
+      width: 469px;
+      padding-top: 10px;
+      text-align: center;
+    }
+
+    .title-box h1 {
+      font-size: 34px;
+      font-weight: 700;
+      color: #6033ff;
+      line-height: 1.2;
+    }
+
+    .accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .accordion {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 2px 4px 0 #99c1ff;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+      transition: all 0.25s ease;
+    }
+
+    .accordion-header {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px 14px 40px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .accordion-header h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      line-height: 1.2;
+    }
+
+    .dropdown {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .dropdown::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 8px solid #000;
+      transition: transform 0.25s ease, border-bottom-color 0.25s ease;
+      transform: rotate(180deg);
+    }
+
+    .accordion.expanded .dropdown::before {
+      transform: rotate(0deg);
+      border-bottom-color: #fff;
+    }
+
+    .footer {
+      text-align: center;
+      color: #6033ff;
+      font-size: 14px;
+      font-weight: 500;
+      width: 100%;
+    }
+
+    .accordion.expanded .accordion-header {
+      background: #6033ff;
+    }
+
+    .accordion.expanded .accordion-header h2 {
+      color: #fff;
+    }
+
+    .accordion-body {
+      display: none;
+      padding: 20px 20px 12px;
+      background: rgba(255, 255, 255, 0.97);
+    }
+
+    .accordion.expanded .accordion-body {
+      display: block;
+    }
+
+    .cards-row,
+    .cards-column {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cards-column {
+      flex-direction: column;
+    }
+
+    .card {
+      border: 1px solid rgba(32, 166, 224, 0.8);
+      border-radius: 6px;
+      overflow: hidden;
+      background: #fff;
+      width: 360px;
+    }
+
+    .card.full-width {
+      width: 100%;
+    }
+
+    .card-header {
+      min-height: 48px;
+      background: rgba(32, 166, 224, 0.8);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .card-body {
+      padding: 10px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .command-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .command {
+      background: #4f8fff;
+      color: #fff;
+      border-radius: 6px;
+      min-height: 35px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.2;
+      flex: 1 1 0;
+      text-align: center;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .command.full {
+      width: 100%;
+      flex: none;
+      justify-content: space-between;
+      text-align: left;
+      white-space: normal;
+      word-break: break-word;
+      gap: 10px;
+    }
+
+    .command-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .copy-btn {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+      position: relative;
+      transition: background 0.25s ease, transform 0.2s ease;
+      overflow: hidden;
+    }
+
+    .copy-btn:hover {
+      transform: scale(1.04);
+    }
+
+    .copy-btn .icon-default,
+    .copy-btn .icon-filled {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+    }
+
+    .copy-btn .icon-default svg {
+      width: 14px;
+      height: 14px;
+      stroke: #ffffff;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.95;
+    }
+
+    .copy-btn .icon-filled {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+
+    .copy-btn .icon-filled svg {
+      width: 26px;
+      height: 26px;
+      display: block;
+    }
+
+    .copy-btn.copied {
+      background: #4a86f7;
+    }
+
+    .copy-btn.copied .icon-default {
+      opacity: 0;
+      transform: scale(0.75);
+    }
+
+    .copy-btn.copied .icon-filled {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .copy-toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #6033ff;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+      z-index: 9999;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1280px) {
+      .frame-content {
+        padding: 40px 30px 20px;
+      }
+
+      .accordion-list {
+        max-width: 100%;
+      }
+
+      .card {
+        width: 100%;
+      }
+
+      .title-box {
+        width: auto;
+      }
+
+      .brace {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="desktop">
+    <div class="frame">
+      <div class="frame-content">
+        <div class="main-content">
+          <div class="title-row">
+            <div class="brace left">{</div>
+            <div class="title-box">
+              <h1>Developement Dashboard</h1>
+            </div>
+            <div class="brace right">}</div>
+          </div>
+
+          <div class="accordion-list">
+            <!-- removed expanded -->
+            <div class="accordion">
+              <div class="accordion-header">
+                <h2>Quick Reference Commands</h2>
+                <div class="dropdown"></div>
+              </div>
+              <div class="accordion-body">
+                <div class="cards-row">
+                  <div class="card">
+                    <div class="card-header">Login Desktop</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">ssh csg@192.12536756.1.11</span>
+                        <button class="copy-btn" data-copy="ssh csg@192.12536756.1.11" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">Kill Project Port</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">ssh csg@192.12536756.1.11</span>
+                        <button class="copy-btn" data-copy="ssh csg@192.12536756.1.11" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- removed expanded -->
+            <div class="accordion">
+              <div class="accordion-header">
+                <h2>Desktop System Projects</h2>
+                <div class="dropdown"></div>
+              </div>
+              <div class="accordion-body">
+                <div class="cards-row">
+                  <div class="card">
+                    <div class="card-header">Uon International Dashboard (Port 5000)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">cd /mnt/mydata/python/uon-international-dashboard</span>
+                        <button class="copy-btn" data-copy="cd /mnt/mydata/python/uon-international-dashboard" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">Uon Scheduler (Port 9000)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">ssh csg@192.12536756.1.11</span>
+                        <button class="copy-btn" data-copy="ssh csg@192.12536756.1.11" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">Fraud Prevention System (8333)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">ssh csg@192.12536756.1.11</span>
+                        <button class="copy-btn" data-copy="ssh csg@192.12536756.1.11" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- removed expanded -->
+            <div class="accordion">
+              <div class="accordion-header">
+                <h2>Local Development Projects</h2>
+                <div class="dropdown"></div>
+              </div>
+              <div class="accordion-body">
+                <div class="cards-row">
+                  <div class="card">
+                    <div class="card-header">Uon International Dashboard (Port 5000)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">cd /mnt/mydata/python/uon-international-dashboard</span>
+                        <button class="copy-btn" data-copy="cd /mnt/mydata/python/uon-international-dashboard" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">password: cgsdfv2025</span>
+                        <button class="copy-btn" data-copy="password: cgsdfv2025" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+
+                      <div class="command full">
+                        <span class="command-text">sudo systemctl restart mysql</span>
+                        <button class="copy-btn" data-copy="sudo systemctl restart mysql" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- removed expanded -->
+            <div class="accordion">
+              <div class="accordion-header">
+                <h2>MySQL Queries</h2>
+                <div class="dropdown"></div>
+              </div>
+              <div class="accordion-body">
+                <div class="cards-row">
+                  <div class="card">
+                    <div class="card-header">Uon International Dashboard (Port 5000)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">cd /mnt/mydata/python/uon-international-dashboard</span>
+                        <button class="copy-btn" data-copy="cd /mnt/mydata/python/uon-international-dashboard" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">Uon International Dashboard (Port 5000)</div>
+                    <div class="card-body">
+                      <div class="command full">
+                        <span class="command-text">cd /mnt/mydata/python/uon-international-dashboard</span>
+                        <button class="copy-btn" data-copy="cd /mnt/mydata/python/uon-international-dashboard" aria-label="Copy text">
+                          <span class="icon-default">
+                            <svg viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="10" height="10" rx="1.5"></rect>
+                              <path d="M6 15H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v1"></path>
+                            </svg>
+                          </span>
+                          <span class="icon-filled">
+                            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                              <path d="M11 10.5C11 7.462 13.462 5 16.5 5H28C30.2091 5 32 6.79086 32 9V10.2C32 11.0837 31.2837 11.8 30.4 11.8C29.5163 11.8 28.8 11.0837 28.8 10.2V9C28.8 8.55817 28.4418 8.2 28 8.2H16.5C15.2298 8.2 14.2 9.22975 14.2 10.5V25.5C14.2 26.7703 15.2298 27.8 16.5 27.8H17.2C18.0837 27.8 18.8 28.5163 18.8 29.4C18.8 30.2837 18.0837 31 17.2 31H16.5C13.462 31 11 28.538 11 25.5V10.5Z" fill="#FFFFFF"/>
+                              <rect x="16" y="12" width="19" height="19" rx="4.5" fill="#E6E6E6"/>
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">@2026 Dashboard - Ashok Sharma</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="copyToast" class="copy-toast">Copied successfully</div>
+
+  <script>
+    const accordions = document.querySelectorAll(".accordion");
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
+    const copyButtons = document.querySelectorAll(".copy-btn");
+    const copyToast = document.getElementById("copyToast");
+    let toastTimer;
+
+    accordionHeaders.forEach((header) => {
+      header.addEventListener("click", (e) => {
+        if (e.target.closest(".copy-btn")) return;
+
+        const currentAccordion = header.parentElement;
+        const isExpanded = currentAccordion.classList.contains("expanded");
+
+        accordions.forEach((accordion) => {
+          accordion.classList.remove("expanded");
+        });
+
+        if (!isExpanded) {
+          currentAccordion.classList.add("expanded");
+        }
+      });
+    });
+
+    function showToast(message) {
+      copyToast.textContent = message;
+      copyToast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        copyToast.classList.remove("show");
+      }, 1800);
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.opacity = "0";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        let copied = false;
+        try {
+          copied = document.execCommand("copy");
+        } catch (error) {
+          copied = false;
+        }
+
+        document.body.removeChild(textArea);
+        return copied;
+      }
+    }
+
+    copyButtons.forEach((button) => {
+      button.addEventListener("click", async (e) => {
+        e.stopPropagation();
+
+        const text = button.getAttribute("data-copy");
+        const copied = await copyText(text);
+
+        if (!copied) {
+          showToast("Copy failed");
+          return;
+        }
+
+        showToast("Copied successfully");
+
+        button.classList.add("copied");
+        clearTimeout(button._copyTimer);
+
+        button._copyTimer = setTimeout(() => {
+          button.classList.remove("copied");
+        }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>
