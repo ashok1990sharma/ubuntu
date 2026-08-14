@@ -310,7 +310,21 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="mb-2">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#gitHub">
+                                        GitHub Commands
+                                    </div>
+                                    <div id="gitHub" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">git remote -v
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -890,7 +904,7 @@
                     </div>
                 </div>
                 <!-- ================= LOCAL PROJECTS ================= -->
-                <div class="accordion mb-4" id="quickSection">
+                <div class="accordion mb-4" id="localSection">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" data-bs-toggle="collapse"
@@ -898,7 +912,7 @@
                                 🚀 Local Development Projects
                             </button>
                         </h2>
-                        <div id="localCollapse" class="accordion-collapse collapse" data-bs-parent="#quickSection">
+                        <div id="localCollapse" class="accordion-collapse collapse" data-bs-parent="#localSection">
                             <div class="accordion-body table-container">
                                 <div class="mb-3">
                                     <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l1">
@@ -1042,42 +1056,6 @@
                                                         onclick="copy(this)">Copy</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l5">
-                                        Ashok Project<span class="spanRight">Port : 8400</span>
-                                    </div>
-                                    <div id="l5" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd python_pro/ashok
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8400
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">cd python_pro/ashok<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8400<button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -1439,7 +1417,212 @@
                         </div>
                     </div>
                 </div>
-                <div class="accordion mb-4" id="quickSection">
+                <div class="accordion mb-4" id="hubSection">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#hubCollapse">
+                                🚀 Local GITHUB Development Projects
+                            </button>
+                        </h2>
+                        <div id="hubCollapse" class="accordion-collapse collapse" data-bs-parent="#hubSection">
+                            <div class="accordion-body table-container">
+                                <div class="mb-3">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV1">
+                                        Unicon International Dashboard V1 <span class="spanRight">Port : 5000</span>
+                                    </div>
+                                    <div id="hubDashV1" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/unicon-Projects/v1/Dashboard-v1
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">source env/bin/activate
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/unicon-Projects/v1/Dashboard-v1<br>
+                                                    source env/bin/activate<br>
+                                                    python3 manage.py runserver 0.0.0.0:5000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV2">
+                                        Unicon International Dashboard V2 <span class="spanRight">Port : 5000</span>
+                                    </div>
+                                    <div id="hubDashV2" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/unicon-Projects/v2/Dashboard-v2
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">source env/bin/activate
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/unicon-Projects/v2/Dashboard-v2<br>
+                                                    source env/bin/activate<br>
+                                                    python3 manage.py runserver 0.0.0.0:5000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubFDIZoneBackend">
+                                        FDIZone Backend <span class="spanRight">Port : 6000</span>
+                                    </div>
+                                    <div id="hubFDIZoneBackend" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/FDIZone/backend
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">source env/bin/activate
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:6000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/FDIZone/backend<br>
+                                                    source env/bin/activate<br>
+                                                    python3 manage.py runserver 0.0.0.0:6000
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayProtectApp">
+                                        Pay-Protect APP <span class="spanRight">Port : 6100</span>
+                                    </div>
+                                    <div id="hubPayProtectApp" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/Pay-Protect/app
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">source env/bin/activate
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:6100
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/Pay-Protect/app<br>
+                                                    source env/bin/activate<br>
+                                                    python3 manage.py runserver 0.0.0.0:6100
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubAshok">
+                                        Ashok Project<span class="spanRight">Port : 8400</span>
+                                    </div>
+                                    <div id="hubAshok" class="collapse mt-2">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="code-box">
+                                                    cd github-pro/ashok
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">source env/bin/activate
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8400
+                                                    <button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="code-box">cd python_pro/ashok<br>
+                                                    source env/bin/activate<br>
+                                                    python3 manage.py runserver 0.0.0.0:8400<button class="btn btn-light btn-sm copy-btn"
+                                                        onclick="copy(this)">Copy</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion mb-4" id="otherSection">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" data-bs-toggle="collapse"
@@ -1447,7 +1630,7 @@
                                 🚀 Other Commands
                             </button>
                         </h2>
-                        <div id="sqlCollapse" class="accordion-collapse collapse" data-bs-parent="#quickSection">
+                        <div id="sqlCollapse" class="accordion-collapse collapse" data-bs-parent="#otherSection">
                             <div class="accordion-body table-container">
                                 <div class="mb-3">
                                     <div class="project-header" data-bs-toggle="collapse" data-bs-target="#O1">
