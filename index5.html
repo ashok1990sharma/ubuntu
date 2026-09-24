@@ -37,21 +37,31 @@
       color: #000;
       padding: 12px 16px;
       border-radius: 6px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
-    /* .project-header:hover {
-      background: #5f5f5f;
-    } */
+    .project-header:hover {
+      background: #b6d4fe;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
     .code-box {
       background: #efeeee;
       color: #000;
-      padding: 8px 10px;
-      border-radius: 6px;
+      padding: 12px 14px;
+      padding-right: 70px;
+      border-radius: 8px;
+      font-family: monospace;
       font-size: 13px;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       position: relative;
-      /* white-space: pre-wrap;*/
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .code-box:hover {
+      transform: translateX(4px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .table-container {
@@ -63,9 +73,15 @@
 
     .copy-btn {
       position: absolute;
-      top: 5px;
-      right: 5px;
+      top: 8px;
+      right: 8px;
       font-size: 11px;
+      transition: all 0.2s ease;
+    }
+    
+    .copy-btn:hover {
+      background-color: #000;
+      color: #fff;
     }
 
     footer {
@@ -340,8 +356,8 @@
 
   <script>
     function copy(btn) {
-      const text = btn.parentElement.innerText.replace("Copy", "");
-      navigator.clipboard.writeText(text.trim());
+      const text = btn.parentElement.innerText.replace("Copy", "").split('\n').map(line => line.trim()).filter(line => line).join('\n');
+      navigator.clipboard.writeText(text);
       btn.innerText = "Copied!";
       setTimeout(() => btn.innerText = "Copy", 1000);
     }
