@@ -690,9 +690,7 @@
                     if (query) {
                         const collapseTarget = item.querySelector('.collapse');
                         if (collapseTarget && !collapseTarget.classList.contains('show')) {
-                            new bootstrap.Collapse(collapseTarget, {
-                                show: true
-                            });
+                            bootstrap.Collapse.getOrCreateInstance(collapseTarget, { toggle: false }).show();
                         }
                     }
                 } else {
@@ -712,35 +710,17 @@
         }
 
         function expandAll() {
-            document.querySelectorAll('.project-header + .collapse').forEach(el => {
-                new bootstrap.Collapse(el, {
-                    show: true
-                });
+            document.querySelectorAll('.collapse').forEach(el => {
+                let bsCol = bootstrap.Collapse.getOrCreateInstance(el, { toggle: false });
+                bsCol.show();
             });
         }
 
         function collapseAll() {
-            document.querySelectorAll('.project-header + .collapse.show').forEach(el => {
-                new bootstrap.Collapse(el, {
-                    hide: true
-                });
+            document.querySelectorAll('.collapse').forEach(el => {
+                let bsCol = bootstrap.Collapse.getOrCreateInstance(el, { toggle: false });
+                bsCol.hide();
             });
-        }
-
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            updateThemeBtn(isDark);
-        }
-
-        function updateThemeBtn(isDark) {
-            const btn = document.getElementById('themeBtn');
-            if (btn) {
-                btn.innerHTML = isDark ?
-                    '<i class="fa-solid fa-sun me-1 text-warning"></i> Light Mode' :
-                    '<i class="fa-solid fa-moon me-1"></i> Dark Mode';
-            }
         }
         (function initTheme() {
             const saved = localStorage.getItem('theme');
