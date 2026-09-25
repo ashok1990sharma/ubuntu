@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="top-navbar mb-4">
         <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
@@ -45,19 +49,22 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <h3 class="fw-bold mb-1">⚙️ Other Tools & Commands</h3>
-                    <p class="text-secondary small mb-0">Docker compose, Redis, Celery kill, code coverage, Ollama AI, and TypeScript</p>
+                    <p class="text-secondary small mb-0">Docker compose, Redis, Celery kill, code coverage, Ollama AI,
+                        and TypeScript</p>
                 </div>
                 <div class="d-flex gap-2">
-                    <button class="action-btn" onclick="expandAll()"><i class="fa-solid fa-angles-down me-1"></i> Expand All</button>
-                    <button class="action-btn" onclick="collapseAll()"><i class="fa-solid fa-angles-up me-1"></i> Collapse All</button>
+                    <button class="action-btn" onclick="expandAll()"><i class="fa-solid fa-angles-down me-1"></i> Expand
+                        All</button>
+                    <button class="action-btn" onclick="collapseAll()"><i class="fa-solid fa-angles-up me-1"></i>
+                        Collapse All</button>
                 </div>
             </div>
             <div class="search-input-group">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" id="dashboardSearch" class="form-control search-input" 
-                       placeholder="Search projects or commands in ⚙️ Other Tools & Commands..." 
-                       oninput="filterPage()">
-                <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()"><i class="fa-solid fa-xmark"></i></button>
+                <input type="text" id="dashboardSearch" class="form-control search-input"
+                    placeholder="Search projects or commands in ⚙️ Other Tools & Commands..." oninput="filterPage()">
+                <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()"><i
+                        class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
 
@@ -68,523 +75,528 @@
 
         <div class="table-container border rounded-3 p-3">
             <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubO1">Code Test & Test Coverage</div>
-                                    <div id="hubO1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-3">
-                                                <div class="code-box">python3 manage.py test<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="code-box">python3 manage.py test app_name -v 2<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="code-box">coverage run manage.py test<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <div class="code-box">coverage run manage.py test app_name<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Test File Coverage Command
-                                                <div class="code-box">coverage run manage.py test master.tests.test_response_rules_views<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Test Class Coverage Command
-                                                <div class="code-box">coverage run manage.py test master.tests.test_response_rules_views.ResponseRulesViewTestCase<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Coverage Report Command
-                                                <div class="code-box">coverage report<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Coverage Report with app Command
-                                                <div class="code-box">coverage report --include="master/*"<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#O1">GitHub Commands</div>
-                                    <div id="O1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">Dashboard Merge Command
-                                                <div class="code-box">git checkout dev-ashok<br>
-                                                                    git fetch origin<br>
-                                                                    git merge origin/dev-rohit<br>
-                                                                    git push origin dev-ashok
-                                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">PayIn/PayOut Merge Command
-                                                <div class="code-box">git checkout dev-ashok<br>
-                                                                    git fetch origin<br>
-                                                                    git merge origin/dev-amrit<br>
-                                                                    git push origin dev-ashok<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">Scheduler Merge Command
-                                                <div class="code-box">git checkout dev-ashok<br>
-                                                                    git fetch origin<br>
-                                                                    git merge origin/dev-temp<br>
-                                                                    git push origin dev-ashok<button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#killProject">Kill Project</div>
-                                    <div id="killProject" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">sudo lsof -i:9000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">sudo kill -9 $(sudo lsof -t -i:9000)
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">sudo kill -9 4176784
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse"
-                                        data-bs-target="#createEnvironment">Create Environment</div>
-                                    <div id="createEnvironment" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 -m venv env
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python manage.py collectstatic
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse"
-                                        data-bs-target="#createEnvironment312">Create Environment >= python3.12</div>
-                                    <div id="createEnvironment312" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3.12 -m venv env
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">pip install -r requirements.txt
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s19">Postgress Database</div>
-                                    <div id="s19" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    http://192.168.1.11/pgadmin4/browser/
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Username: info@csgtech.in
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Password: pgadmin
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER': 'postgres','PASSWORD':
-                                                    'pgadmin','HOST': 'localhost','PORT': '5432'}
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    connect with command : psql -h 192.168.1.11 -U postgres
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Create Database Query : CREATE DATABASE django_auth;
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s22">Postgress Database Local</div>
-                                    <div id="s22" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Username: postgres
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Password: postgres
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER': 'postgres','PASSWORD':
-                                                    'pgadmin','HOST': 'localhost','PORT': '5432'}
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    connect with command : sudo -u postgres psql
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Drop Database Query : DROP DATABASE db_name;
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    Create Database Query : CREATE DATABASE simulator;
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    ps aux | grep celery<br>
-                                                    pkill -9 -f celery<br>
-                                                    pkill -f celery<br>
-                                                    killall celery<br>
-                                                    killall -9 celery<br>
-                                                    ps -ef | grep celery<br>
-                                                    pkill -9 -f celery<br>
-                                                    ps -ef | grep celery
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#docker">Docker Commands</div>
-                                    <div id="docker" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                Only Code change
-                                                <div class="code-box">
-                                                    docker compose restart backend
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Nayi Dependency / Library
-                                                <div class="code-box">
-                                                    docker compose up -d --build backend
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Static Files / Collectstatic
-                                                <div class="code-box">
-                                                    docker compose exec backend python manage.py collectstatic --noinput
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Database Migrations chalani ho
-                                                <div class="code-box">
-                                                    docker compose exec backend python manage.py makemigrations
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                Sabhi Containers ko Normal Restart karna ho
-                                                <div class="code-box">
-                                                    docker compose restart
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                # 1. Image build karke containers restart karein
-                                                <div class="code-box">
-                                                    docker compose up -d --build
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                # 2. Database migrations run karein
-                                                <div class="code-box">
-                                                    docker compose exec backend python manage.py migrate
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                # 3. Static files collect karein
-                                                <div class="code-box">
-                                                    docker compose exec backend python manage.py collectstatic --noinput
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                # 4. Daphne logs verify karein
-                                                <div class="code-box">
-                                                    docker compose logs -f backend
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#loginGitOther">Login Git Other</div>
-                                    <div id="loginGitOther" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                check diff file new update code
-                                                <div class="code-box">git diff --name-only dev-ashok@{1} dev-ashok
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                Current branch with *
-                                                <div class="code-box">git branch
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                switch branch
-                                                <div class="code-box">git switch dev-satyam
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s15">Inport SQL Command</div>
-                                    <div id="s15" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    mysql -u root -p unicon_satyam < /var/www/html/unicon_new.sql <button
-                                                        class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s16">AI Gemini Google</div>
-                                    <div id="s16" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-14">
-                                                <div class="code-box">
-                                                    https://gemini.google.com/u/3/app
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-14">
-                                                <div class="code-box">
-                                                    Tushank API KEY : AIzaSyAMo3vBjc-bbakpYbM_drUuyvosC4CQj1c
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-14">
-                                                <div class="code-box">
-                                                    https://ai.google.dev/gemini-api/docs
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s17">AI chatgpt</div>
-                                    <div id="s17" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    https://chatgpt.com/
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    https://platform.openai.com/docs/quickstart?language=python
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s18">AI minimax</div>
-                                    <div id="s18" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    https://agent.minimax.io/
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="code-box">
-                                                    API KEY :
-                                                    eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJhc2hvayBzaGFybWEiLCJVc2VyTmFtZSI6IkRldmVsb3BlciBQcm9qZWN0IiwiQWNjb3VudCI6IiIsIlN1YmplY3RJRCI6IjIwMDE1NTE2NTIzMTM2MzM2ODIiLCJQaG9uZSI6IiIsIkdyb3VwSUQiOiIyMDAxNTUxNjUyMzA5NDQzNDc0IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoic2hhcm1hLjkwLmFzaG9rQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEyLTE4IDIxOjEyOjE5IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.LbdlZERnUokKYSbko-58JRkETFO3q8wICGfbTflX69Pe8_Xxz2PdL-WmxgmhlOYJeAmGC9n11RUEZtQVf8qwCYY31DukAQUNZG6Z2imxscFMyr9cQj1V8aB_a232TRXyN5Xz8mQIanurqjPK23b7NCKnHW0Jlh8I5MyVSn7tKvv18UnY9-LbTaP_mKfZ6PHC9Y7MbnX_bhso0mpGAdw6bAuMfNsksVotwN9MvYTPi4MVA3ZH5I3k3YHM0hgefRM07LKvV9djP-s4HpflLswJuhVAqWsQ6QW-WxsF2DpbnhFCmYDcebqRJIMybHs5Gk4k0kuRZcUKBhABM3GIi14CpA
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#o18">AI grok</div>
-                                    <div id="o18" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    https://grok.com/
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    Email : sharma.90.ashok@gmail.com
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    Password: msksksas@8956
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s20">Type Script Commands</div>
-                                    <div id="s20" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    compile ts file : tsc app.ts --watch
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    compile all ts file : tsc *.ts -w
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    execute js filetsc app.ts --watch
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s21">Ollama Commands</div>
-                                    <div id="s21" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    Check all Running Services systemctl list-units --type=service --state=running
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    Stop Ollama: sudo systemctl stop ollama.service
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    Start Ollama : sudo systemctl start ollama.service
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    Disable Ollama : sudo systemctl disable ollama.service
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="code-box">
-                                                    Status Ollama : systemctl status ollama.service
-                                                    <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubO1">Code Test & Test Coverage
+                </div>
+                <div id="hubO1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="code-box">python3 manage.py test<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
                             </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="code-box">python3 manage.py test app_name -v 2<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="code-box">coverage run manage.py test<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="code-box">coverage run manage.py test app_name<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Test File Coverage Command
+                            <div class="code-box">coverage run manage.py test
+                                master.tests.test_response_rules_views<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Test Class Coverage Command
+                            <div class="code-box">coverage run manage.py test
+                                master.tests.test_response_rules_views.ResponseRulesViewTestCase<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Coverage Report Command
+                            <div class="code-box">coverage report<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Coverage Report with app Command
+                            <div class="code-box">coverage report --include="master/*"<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#O1">GitHub Commands</div>
+                <div id="O1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">Dashboard Merge Command
+                            <div class="code-box">git checkout dev-ashok<br>
+                                git fetch origin<br>
+                                git merge origin/dev-rohit<br>
+                                git push origin dev-ashok
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">PayIn/PayOut Merge Command
+                            <div class="code-box">git checkout dev-ashok<br>
+                                git fetch origin<br>
+                                git merge origin/dev-amrit<br>
+                                git push origin dev-ashok<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">Scheduler Merge Command
+                            <div class="code-box">git checkout dev-ashok<br>
+                                git fetch origin<br>
+                                git merge origin/dev-temp<br>
+                                git push origin dev-ashok<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#killProject">Kill Project</div>
+                <div id="killProject" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">sudo lsof -i:9000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">sudo kill -9 $(sudo lsof -t -i:9000)
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">sudo kill -9 4176784
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#createEnvironment">Create
+                    Environment</div>
+                <div id="createEnvironment" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 -m venv env
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python manage.py collectstatic
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#createEnvironment312">Create
+                    Environment >= python3.12</div>
+                <div id="createEnvironment312" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">python3.12 -m venv env
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">pip install -r requirements.txt
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s19">Postgress Database</div>
+                <div id="s19" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                http://192.168.1.11/pgadmin4/browser/
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Username: info@csgtech.in
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Password: pgadmin
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER':
+                                'postgres','PASSWORD':
+                                'pgadmin','HOST': 'localhost','PORT': '5432'}
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                connect with command : psql -h 192.168.1.11 -U postgres
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Create Database Query : CREATE DATABASE django_auth;
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s22">Postgress Database Local
+                </div>
+                <div id="s22" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Username: postgres
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Password: postgres
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER':
+                                'postgres','PASSWORD':
+                                'pgadmin','HOST': 'localhost','PORT': '5432'}
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                connect with command : sudo -u postgres psql
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                Drop Database Query : DROP DATABASE db_name;
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="
+                                            <div class=" col-lg-12">
+                            <div class="code-box">
+                                Create Database Query : CREATE DATABASE simulator;
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                ps aux | grep celery<br>
+                                pkill -9 -f celery<br>
+                                pkill -f celery<br>
+                                killall celery<br>
+                                killall -9 celery<br>
+                                ps -ef | grep celery<br>
+                                pkill -9 -f celery<br>
+                                ps -ef | grep celery
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#docker">Docker Commands</div>
+                <div id="docker" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            Only Code change
+                            <div class="code-box">
+                                docker compose restart backend
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Nayi Dependency / Library
+                            <div class="code-box">
+                                docker compose up -d --build backend
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Static Files / Collectstatic
+                            <div class="code-box">
+                                docker compose exec backend python manage.py collectstatic --noinput
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Database Migrations chalani ho
+                            <div class="code-box">
+                                docker compose exec backend python manage.py makemigrations
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            Sabhi Containers ko Normal Restart karna ho
+                            <div class="code-box">
+                                docker compose restart
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            # 1. Image build karke containers restart karein
+                            <div class="code-box">
+                                docker compose up -d --build
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            # 2. Database migrations run karein
+                            <div class="code-box">
+                                docker compose exec backend python manage.py migrate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            # 3. Static files collect karein
+                            <div class="code-box">
+                                docker compose exec backend python manage.py collectstatic --noinput
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            # 4. Daphne logs verify karein
+                            <div class="code-box">
+                                docker compose logs -f backend
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#loginGitOther">Login Git Other
+                </div>
+                <div id="loginGitOther" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            check diff file new update code
+                            <div class="code-box">git diff --name-only dev-ashok@{1} dev-ashok
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            Current branch with *
+                            <div class="code-box">git branch
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            switch branch
+                            <div class="code-box">git switch dev-satyam
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s15">Inport SQL Command</div>
+                <div id="s15" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                mysql -u root -p unicon_satyam < /var/www/html/unicon_new.sql <button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s16">AI Gemini Google</div>
+                <div id="s16" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-14">
+                            <div class="code-box">
+                                https://gemini.google.com/u/3/app
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-14">
+                            <div class="code-box">
+                                Tushank API KEY : AIzaSyAMo3vBjc-bbakpYbM_drUuyvosC4CQj1c
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-14">
+                            <div class="code-box">
+                                https://ai.google.dev/gemini-api/docs
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s17">AI chatgpt</div>
+                <div id="s17" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                https://chatgpt.com/
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                https://platform.openai.com/docs/quickstart?language=python
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s18">AI minimax</div>
+                <div id="s18" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                https://agent.minimax.io/
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                API KEY :
+                                eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJhc2hvayBzaGFybWEiLCJVc2VyTmFtZSI6IkRldmVsb3BlciBQcm9qZWN0IiwiQWNjb3VudCI6IiIsIlN1YmplY3RJRCI6IjIwMDE1NTE2NTIzMTM2MzM2ODIiLCJQaG9uZSI6IiIsIkdyb3VwSUQiOiIyMDAxNTUxNjUyMzA5NDQzNDc0IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoic2hhcm1hLjkwLmFzaG9rQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEyLTE4IDIxOjEyOjE5IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.LbdlZERnUokKYSbko-58JRkETFO3q8wICGfbTflX69Pe8_Xxz2PdL-WmxgmhlOYJeAmGC9n11RUEZtQVf8qwCYY31DukAQUNZG6Z2imxscFMyr9cQj1V8aB_a232TRXyN5Xz8mQIanurqjPK23b7NCKnHW0Jlh8I5MyVSn7tKvv18UnY9-LbTaP_mKfZ6PHC9Y7MbnX_bhso0mpGAdw6bAuMfNsksVotwN9MvYTPi4MVA3ZH5I3k3YHM0hgefRM07LKvV9djP-s4HpflLswJuhVAqWsQ6QW-WxsF2DpbnhFCmYDcebqRJIMybHs5Gk4k0kuRZcUKBhABM3GIi14CpA
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#o18">AI grok</div>
+                <div id="o18" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                https://grok.com/
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                Email : sharma.90.ashok@gmail.com
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                Password: msksksas@8956
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s20">Type Script Commands</div>
+                <div id="s20" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                compile ts file : tsc app.ts --watch
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                compile all ts file : tsc *.ts -w
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                execute js filetsc app.ts --watch
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#s21">Ollama Commands</div>
+                <div id="s21" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                Check all Running Services systemctl list-units --type=service --state=running
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                Stop Ollama: sudo systemctl stop ollama.service
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                Start Ollama : sudo systemctl start ollama.service
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                Disable Ollama : sudo systemctl disable ollama.service
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                Status Ollama : systemctl status ollama.service
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
     </div>
 
     <footer class="text-center mt-5">
@@ -613,13 +625,11 @@
                 btn.classList.add('copied');
                 btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Copied!';
                 showToast('Copied to clipboard!');
-
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     btn.innerHTML = origText;
                 }, 1500);
             }
-
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(text).then(notifySuccess).catch(err => {
                     fallbackCopy(text, notifySuccess);
@@ -661,10 +671,8 @@
             const query = input.value.toLowerCase().trim();
             const clearBtn = document.getElementById('clearSearchBtn');
             if (clearBtn) clearBtn.style.display = query ? 'block' : 'none';
-
             const projectItems = document.querySelectorAll('.mb-2, .mb-3');
             let matchCount = 0;
-
             projectItems.forEach(item => {
                 const textContent = item.innerText.toLowerCase();
                 if (!query || textContent.includes(query)) {
@@ -673,14 +681,15 @@
                     if (query) {
                         const collapseTarget = item.querySelector('.collapse');
                         if (collapseTarget && !collapseTarget.classList.contains('show')) {
-                            new bootstrap.Collapse(collapseTarget, { show: true });
+                            new bootstrap.Collapse(collapseTarget, {
+                                show: true
+                            });
                         }
                     }
                 } else {
                     item.style.display = 'none';
                 }
             });
-
             const noResults = document.getElementById('noResults');
             if (noResults) noResults.style.display = (query && matchCount === 0) ? 'block' : 'none';
         }
@@ -695,13 +704,17 @@
 
         function expandAll() {
             document.querySelectorAll('.project-header + .collapse').forEach(el => {
-                new bootstrap.Collapse(el, { show: true });
+                new bootstrap.Collapse(el, {
+                    show: true
+                });
             });
         }
 
         function collapseAll() {
             document.querySelectorAll('.project-header + .collapse.show').forEach(el => {
-                new bootstrap.Collapse(el, { hide: true });
+                new bootstrap.Collapse(el, {
+                    hide: true
+                });
             });
         }
 
@@ -715,12 +728,11 @@
         function updateThemeBtn(isDark) {
             const btn = document.getElementById('themeBtn');
             if (btn) {
-                btn.innerHTML = isDark ? 
-                    '<i class="fa-solid fa-sun me-1 text-warning"></i> Light Mode' : 
+                btn.innerHTML = isDark ?
+                    '<i class="fa-solid fa-sun me-1 text-warning"></i> Light Mode' :
                     '<i class="fa-solid fa-moon me-1"></i> Dark Mode';
             }
         }
-
         (function initTheme() {
             const saved = localStorage.getItem('theme');
             if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -733,7 +745,7 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", "./", true, "logout", "wrong_password");
             xmlhttp.send("");
-            xmlhttp.onreadystatechange = function () {
+            xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState == 4) {
                     window.location.reload();
                 }
@@ -741,4 +753,5 @@
         }
     </script>
 </body>
+
 </html>

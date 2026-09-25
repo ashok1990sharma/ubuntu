@@ -102,7 +102,7 @@
 </head>
 
 <body>
-    
+
     <h2>🧰 Quick Reference Commands <span style="float: right;"><button onclick="logout()">Logout</button></span></h2>
     <div class="section-divider"></div>
 
@@ -145,9 +145,9 @@
                 <td>
                     <code>Allow Port:</code><br><code>sudo ufw allow from 192.168.1.8 to any port 3306</code><br>
                     <code>sudo ufw allow 8001<br>
-                    sudo ufw allow 8002<br>
-                    sudo ufw allow 8003<br>
-                    sudo ufw reload<br>
+                        sudo ufw allow 8002<br>
+                        sudo ufw allow 8003<br>
+                        sudo ufw reload<br>
                     </code>
                 </td>
             </tr>
@@ -160,7 +160,7 @@
         </tbody>
     </table>
 
-     <h2>💻 Desktop System Development Projects</h2>
+    <h2>💻 Desktop System Development Projects</h2>
     <div class="section-divider"></div>
 
     <table>
@@ -419,7 +419,10 @@
                 <td>Aaditya Project</td>
                 <td><code>cd python_pro/Aaditya/ai_interviewer_project</code></td>
                 <td><code>source env/bin/activate</code></td>
-                <td><code>python3 manage.py runserver</code><br><code>celery -A ai_interviewer_project worker --loglevel=debug --pool=solo -Q default,resume_high,tts_high,cleanup_low,analytics_medium</code><br><code>celery -A ai_interviewer_project beat --loglevel=info</code><br><code>redis-cli</code>
+                <td><code>python3 manage.py runserver</code><br><code>celery -A ai_interviewer_project worker
+                        --loglevel=debug --pool=solo -Q
+                        default,resume_high,tts_high,cleanup_low,analytics_medium</code><br><code>celery -A
+                        ai_interviewer_project beat --loglevel=info</code><br><code>redis-cli</code>
                 </td>
                 <td>8085</td>
             </tr>
@@ -465,72 +468,102 @@
         <tbody>
             <tr>
                 <td>Merchant</td>
-                <td><code>SELECT `id`, `merchant_id`, `reversal_type`, `token_time`, `is_active`, `user_id` FROM `merchants`;</code></td>
+                <td><code>SELECT `id`, `merchant_id`, `reversal_type`, `token_time`, `is_active`, `user_id` FROM
+                        `merchants`;</code></td>
             </tr>
             <tr>
                 <td>Web Info</td>
-                <td><code>SELECT `id`, `is_active`, `deployment`, `dashboard_url`, `payin_url`, `payout_url`, `scheduler_url` FROM `web_info`;</code></td>
+                <td><code>SELECT `id`, `is_active`, `deployment`, `dashboard_url`, `payin_url`, `payout_url`,
+                        `scheduler_url` FROM `web_info`;</code></td>
             </tr>
             <tr>
                 <td>payout by acquirer id</td>
-                <td><code>SELECT `id`, `acquirer_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE `acquirer_id` in (327877845391, 995081714375) and `status_id`  IN (330294404959, 400189050031, 501628475024, 510440056445);</code></td>
+                <td><code>SELECT `id`, `acquirer_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE `acquirer_id`
+                        in (327877845391, 995081714375) and `status_id` IN (330294404959, 400189050031, 501628475024,
+                        510440056445);</code></td>
             </tr>
             <tr>
                 <td>payout get by status</td>
-                <td><code>SELECT `id`, `currency`, `pay_mode`, `sub_pay_mode`, `merchant_id`, `status_id`, `created_at` FROM `txn_payouts` WHERE `txn_payouts`.`status_id` IN (189061784014, 651148842461);</code></td>
+                <td><code>SELECT `id`, `currency`, `pay_mode`, `sub_pay_mode`, `merchant_id`, `status_id`, `created_at`
+                        FROM `txn_payouts` WHERE `txn_payouts`.`status_id` IN (189061784014, 651148842461);</code></td>
             </tr>
             <tr>
                 <td>payout update status</td>
-                <td><code>UPDATE `txn_payouts` SET `status_id` = '604908454283' WHERE `txn_payouts`.`status_id` IN (189061784014, 651148842461);</code></td>
+                <td><code>UPDATE `txn_payouts` SET `status_id` = '604908454283' WHERE `txn_payouts`.`status_id` IN
+                        (189061784014, 651148842461);</code></td>
             </tr>
             <tr>
                 <td>Update Status Query</td>
-                <td><code>UPDATE `txn_payouts` SET `status_id` = '538589394873' WHERE `txn_payouts`.`status_id` = 651148842461;</code></td>
+                <td><code>UPDATE `txn_payouts` SET `status_id` = '538589394873' WHERE `txn_payouts`.`status_id` =
+                        651148842461;</code></td>
             </tr>
             <tr>
                 <td>payin by date range</td>
-                <td><code>SELECT `id`, `order_id`, `txn_id`,  `sub_txn_id`, `acq_ref_id`, `acquirer_id`, `merchant_id`, `status_id`, `created_at` FROM `txn_payin` WHERE `acq_ref_id` = '' AND `created_at` > '2025-07-12 11:50:08.019181' ORDER BY `txn_payin`.`created_at` ASC </code></td>
+                <td><code>SELECT `id`, `order_id`, `txn_id`, `sub_txn_id`, `acq_ref_id`, `acquirer_id`, `merchant_id`,
+                        `status_id`, `created_at` FROM `txn_payin` WHERE `acq_ref_id` = '' AND `created_at` >
+                        '2025-07-12 11:50:08.019181' ORDER BY `txn_payin`.`created_at` ASC </code></td>
             </tr>
             <tr>
                 <td>payin by id</td>
-                <td><code>SELECT `id`, `txn_id`, `sub_txn_id`, `source`, `created_at`, `acquirer_id`, `merchant_id`, `status_id`, `sdf1` FROM `txn_payin` WHERE `id` = 523097728091;</code></td>
+                <td><code>SELECT `id`, `txn_id`, `sub_txn_id`, `source`, `created_at`, `acquirer_id`, `merchant_id`,
+                        `status_id`, `sdf1` FROM `txn_payin` WHERE `id` = 523097728091;</code></td>
             </tr>
             <tr>
                 <td>payin update status</td>
-                <td><code>UPDATE `txn_payin` SET `status_id` = '330294404959' WHERE `merchant_id` = 'iAbYwO0kvUHxazo' and `status_id` = 139428748779; </code></td>
+                <td><code>UPDATE `txn_payin` SET `status_id` = '330294404959' WHERE `merchant_id` = 'iAbYwO0kvUHxazo'
+                        and `status_id` = 139428748779; </code></td>
             </tr>
             <tr>
                 <td>Truncate Ticket </td>
-                <td><code>DELETE FROM `concern_history`; <br>DELETE FROM `concern_reply`; <br>DELETE FROM `concern`; <br></code></td>
+                <td><code>DELETE FROM `concern_history`; <br>DELETE FROM `concern_reply`; <br>DELETE FROM `concern`;
+                        <br></code></td>
             </tr>
             <tr>
                 <td>Salary Component Template</td>
-                <td><code>SELECT `salary_component`.`name`, `salary_component`.`code`, `template_component`.`is_earning`, `template_component`.`calc_type`, `template_component`.`calc_value`, `template_component`.`calc_gross`, `template_component`.`based_on_id`, `template_component`.`formula` FROM `template_component` JOIN `salary_component` ON `salary_component`.`id` = `template_component`.`component_id` WHERE `template_id` = 680307646336 ORDER BY `salary_component`.`created_at` ASC; </code></td>
+                <td><code>SELECT `salary_component`.`name`, `salary_component`.`code`,
+                        `template_component`.`is_earning`, `template_component`.`calc_type`,
+                        `template_component`.`calc_value`, `template_component`.`calc_gross`,
+                        `template_component`.`based_on_id`, `template_component`.`formula` FROM `template_component`
+                        JOIN `salary_component` ON `salary_component`.`id` = `template_component`.`component_id` WHERE
+                        `template_id` = 680307646336 ORDER BY `salary_component`.`created_at` ASC; </code></td>
             </tr>
             <tr>
                 <td>Wen Info deployment</td>
-                <td><code>SELECT `id`, `is_active`, `user_id`, `deployment` FROM `web_info` WHERE `user_id` = 1; </code></td>
+                <td><code>SELECT `id`, `is_active`, `user_id`, `deployment` FROM `web_info` WHERE `user_id` = 1; </code>
+                </td>
             </tr>
             <tr>
                 <td>Payout Query</td>
                 <td>
-                    <code>SELECT `id`, `order_id`, `txn_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE `status_id` = 651148842461;</code><br><br>
+                    <code>SELECT `id`, `order_id`, `txn_id`, `merchant_id`, `status_id` FROM `txn_payouts` WHERE
+                        `status_id` = 651148842461;</code><br><br>
                     <code>UPDATE `merchants` SET `is_active` = '1' WHERE `merchants`.`id` = 589967054361;</code><br><br>
-                    <code>UPDATE `txn_payouts` SET `status_id` = '330294404959' WHERE `status_id` = 651148842461;</code><br><br>
-                    <code>SELECT `id`, `reversal_type`, `merchant_id`, `is_active` FROM `merchants` WHERE `merchant_id` in ('iAbYwO0kvUHxazo', 'UMB24BA6GOYQNDA', 'UMTW2TWWLB8GVJN', 'UMWOXZ2UPRUNFOB', 'UMPCR6J6MBNB15X', 'UMAIB3Q7O659IW4', 'UM6Y4G44DVTTSCE', 'UMB6O1Z5C4C164W', 'UMU7AV369LJWPD1', 'UMNEOHB5DZ5X5SK', 'UMH5EXR1CJXWTV5', 'UMRBSZ0GVGZJ7N9', 'UMSHQ5SKRQ8IPVH', 'UM89JJUFQ8T0RBP', 'UM41B8A2I0UTSHA', 'UMOZFP2BMEEQ3PR', 'UMX4XG2TJF6CVAE');</code>
+                    <code>UPDATE `txn_payouts` SET `status_id` = '330294404959' WHERE `status_id` =
+                        651148842461;</code><br><br>
+                    <code>SELECT `id`, `reversal_type`, `merchant_id`, `is_active` FROM `merchants` WHERE `merchant_id`
+                        in ('iAbYwO0kvUHxazo', 'UMB24BA6GOYQNDA', 'UMTW2TWWLB8GVJN', 'UMWOXZ2UPRUNFOB',
+                        'UMPCR6J6MBNB15X', 'UMAIB3Q7O659IW4', 'UM6Y4G44DVTTSCE', 'UMB6O1Z5C4C164W', 'UMU7AV369LJWPD1',
+                        'UMNEOHB5DZ5X5SK', 'UMH5EXR1CJXWTV5', 'UMRBSZ0GVGZJ7N9', 'UMSHQ5SKRQ8IPVH', 'UM89JJUFQ8T0RBP',
+                        'UM41B8A2I0UTSHA', 'UMOZFP2BMEEQ3PR', 'UMX4XG2TJF6CVAE');</code>
                 </td>
             </tr>
             <tr>
                 <td>Attendance Query</td>
                 <td>
-                    <code>SELECT `id`, `in_date`, `status`, `in_date_time`, `emp_id`, `created_at`, `late`, `absent`, `half_day`, `out_date_time`, `user_id`, `emp_id` FROM `attendance` WHERE `emp_id` = 3 ORDER BY `attendance`.`created_at` DESC</code>
-                    <code>SELECT `id`, `emp_code`, `Join_date`, `exit_date`, `sl`, `cl`, `el`, `created_at`, `info_id`, `user_id`, `shift_id` FROM `auth_employee` WHERE `id` = 376364084738 ORDER BY `auth_employee`.`created_at` ASC; </code>
+                    <code>SELECT `id`, `in_date`, `status`, `in_date_time`, `emp_id`, `created_at`, `late`, `absent`,
+                        `half_day`, `out_date_time`, `user_id`, `emp_id` FROM `attendance` WHERE `emp_id` = 3 ORDER BY
+                        `attendance`.`created_at` DESC</code>
+                    <code>SELECT `id`, `emp_code`, `Join_date`, `exit_date`, `sl`, `cl`, `el`, `created_at`, `info_id`,
+                        `user_id`, `shift_id` FROM `auth_employee` WHERE `id` = 376364084738 ORDER BY
+                        `auth_employee`.`created_at` ASC; </code>
                 </td>
             </tr>
             <tr>
                 <td>Product Query</td>
                 <td>
-                    <code>SELECT `id`, `title`, `sku`, `mrp`, `sale_price`, `inventory`, `negative_inv`, `notify_qty`, `is_active`, `batch`, `expiry`, `parent`, `product_id` FROM `product_inventory` WHERE `product_id` = 224854368651;</code>
+                    <code>SELECT `id`, `title`, `sku`, `mrp`, `sale_price`, `inventory`, `negative_inv`, `notify_qty`,
+                        `is_active`, `batch`, `expiry`, `parent`, `product_id` FROM `product_inventory` WHERE
+                        `product_id` = 224854368651;</code>
                     <code></code>
                 </td>
             </tr>
@@ -538,10 +571,7 @@
             <tr>
                 <td>Inport SQL Command</td>
                 <td>
-                    <code>mysql -u root -p unicon_satyam < /var/www/html/unicon_new.sql</code>
-                </td>
-            </tr>
-            <tr>
+                    <code>mysql -u root -p unicon_satyam < /var/www/html/unicon_new.sql </code> </td> </tr> <tr>
                 <td>AI Gemini Google</td>
                 <td>
                     <code>https://gemini.google.com/u/3/app</code><br>
@@ -560,7 +590,8 @@
                 <td>AI minimax</td>
                 <td>
                     <code>https://agent.minimax.io/</code><br>
-                    <code>API KEY : eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJhc2hvayBzaGFybWEiLCJVc2VyTmFtZSI6IkRldmVsb3BlciBQcm9qZWN0IiwiQWNjb3VudCI6IiIsIlN1YmplY3RJRCI6IjIwMDE1NTE2NTIzMTM2MzM2ODIiLCJQaG9uZSI6IiIsIkdyb3VwSUQiOiIyMDAxNTUxNjUyMzA5NDQzNDc0IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoic2hhcm1hLjkwLmFzaG9rQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEyLTE4IDIxOjEyOjE5IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.LbdlZERnUokKYSbko-58JRkETFO3q8wICGfbTflX69Pe8_Xxz2PdL-WmxgmhlOYJeAmGC9n11RUEZtQVf8qwCYY31DukAQUNZG6Z2imxscFMyr9cQj1V8aB_a232TRXyN5Xz8mQIanurqjPK23b7NCKnHW0Jlh8I5MyVSn7tKvv18UnY9-LbTaP_mKfZ6PHC9Y7MbnX_bhso0mpGAdw6bAuMfNsksVotwN9MvYTPi4MVA3ZH5I3k3YHM0hgefRM07LKvV9djP-s4HpflLswJuhVAqWsQ6QW-WxsF2DpbnhFCmYDcebqRJIMybHs5Gk4k0kuRZcUKBhABM3GIi14CpA</code>
+                    <code>API KEY :
+                        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJHcm91cE5hbWUiOiJhc2hvayBzaGFybWEiLCJVc2VyTmFtZSI6IkRldmVsb3BlciBQcm9qZWN0IiwiQWNjb3VudCI6IiIsIlN1YmplY3RJRCI6IjIwMDE1NTE2NTIzMTM2MzM2ODIiLCJQaG9uZSI6IiIsIkdyb3VwSUQiOiIyMDAxNTUxNjUyMzA5NDQzNDc0IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoic2hhcm1hLjkwLmFzaG9rQGdtYWlsLmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDI1LTEyLTE4IDIxOjEyOjE5IiwiVG9rZW5UeXBlIjoxLCJpc3MiOiJtaW5pbWF4In0.LbdlZERnUokKYSbko-58JRkETFO3q8wICGfbTflX69Pe8_Xxz2PdL-WmxgmhlOYJeAmGC9n11RUEZtQVf8qwCYY31DukAQUNZG6Z2imxscFMyr9cQj1V8aB_a232TRXyN5Xz8mQIanurqjPK23b7NCKnHW0Jlh8I5MyVSn7tKvv18UnY9-LbTaP_mKfZ6PHC9Y7MbnX_bhso0mpGAdw6bAuMfNsksVotwN9MvYTPi4MVA3ZH5I3k3YHM0hgefRM07LKvV9djP-s4HpflLswJuhVAqWsQ6QW-WxsF2DpbnhFCmYDcebqRJIMybHs5Gk4k0kuRZcUKBhABM3GIi14CpA</code>
                 </td>
             </tr>
             <tr>
@@ -569,7 +600,8 @@
                     <code>http://192.168.1.11/pgadmin4/browser/ </code><br>
                     <code>Username: info@csgtech.in</code><br>
                     <code>Password: pgadmin</code><br>
-                    <code>'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER': 'postgres','PASSWORD': 'pgadmin','HOST': 'localhost','PORT': '5432'}</code><br>
+                    <code>'default': {'ENGINE': 'django.db.backends.postgresql','NAME': 'nexus','USER':
+                        'postgres','PASSWORD': 'pgadmin','HOST': 'localhost','PORT': '5432'}</code><br>
                     <code>connect with command : psql -h 192.168.1.11 -U postgres</code><br>
                     <code>Create Database Query : CREATE DATABASE django_auth;</code>
                 </td>
@@ -579,7 +611,7 @@
                 <td>
                     compile ts file : <code>tsc app.ts --watch </code><br>
                     compile all ts file : <code>tsc *.ts -w</code><br>
-                    execute js  file<code>tsc app.ts --watch</code><br>
+                    execute js file<code>tsc app.ts --watch</code><br>
                 </td>
             </tr>
             <tr>
@@ -592,20 +624,19 @@
                     Status Ollama : <code>systemctl status ollama.service</code>
                 </td>
             </tr>
-        </body>
-    </table>
+</body>
+</table>
 
-    http://localhost/unicon_new_structure.sql
-    <footer>
-        © 2025 Local Development Dashboard — Organized by Ashok Sharma
-    </footer>
+http://localhost/unicon_new_structure.sql
+<footer>
+    © 2025 Local Development Dashboard — Organized by Ashok Sharma
+</footer>
 <script>
     function logout() {
         // This sends a background request with a fake username 'logout'
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", "./", true, "logout", "wrong_password");
         xmlhttp.send("");
-        
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4) {
                 // After the fake login fails, we refresh the page
@@ -616,6 +647,5 @@
 </script>
 
 </body>
+
 </html>
-
-
