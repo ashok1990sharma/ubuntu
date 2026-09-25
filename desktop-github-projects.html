@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📦 Old Projects — Local Development Dashboard</title>
+    <title>Desktop GitHub Projects — Local Development Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,11 +25,11 @@
                 <nav class="nav-links d-none d-lg-flex gap-1">
                     <a href="index.html" class="nav-link-btn ">Home</a>
                     <a href="quick-reference.html" class="nav-link-btn ">Quick Ref</a>
-                    <a href="desktop-projects.html" class="nav-link-btn ">Desktop</a>
-                    <a href="desktop-github-projects.html" class="nav-link-btn">Desktop GitHub</a>
+                    <a href="desktop-projects.html" class="nav-link-btn">Desktop</a>
+                    <a href="desktop-github-projects.html" class="nav-link-btn active">Desktop GitHub</a>
                     <a href="local-projects.html" class="nav-link-btn ">Local</a>
                     <a href="github-projects.html" class="nav-link-btn ">GitHub</a>
-                    <a href="old-projects.html" class="nav-link-btn active">Old Projects</a>
+                    <a href="old-projects.html" class="nav-link-btn ">Old Projects</a>
                     <a href="other-tools.html" class="nav-link-btn ">Other Tools</a>
                 </nav>
             </div>
@@ -48,8 +48,9 @@
         <div class="controls-card mb-4">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
-                    <h3 class="fw-bold mb-1">📦 Old Projects</h3>
-                    <p class="text-secondary small mb-0">Legacy project archives and previous build versions</p>
+                    <h3 class="fw-bold mb-1">🖥️ Desktop GitHub Projects</h3>
+                    <p class="text-secondary small mb-0">Desktop server applications running under /mnt/mydata/python/
+                        path</p>
                 </div>
                 <div class="d-flex gap-2">
                     <button class="action-btn" onclick="expandAll()"><i class="fa-solid fa-angles-down me-1"></i> Expand
@@ -61,7 +62,7 @@
             <div class="search-input-group">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" id="dashboardSearch" class="form-control search-input"
-                    placeholder="Search projects or commands in 📦 Old Projects..." oninput="filterPage()">
+                    placeholder="Search projects or commands in 🖥️ Desktop Projects..." oninput="filterPage()">
                 <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()"><i
                         class="fa-solid fa-xmark"></i></button>
             </div>
@@ -73,239 +74,33 @@
         </div>
 
         <div class="table-container border rounded-3 p-3">
+            <!-- V2 Unicon Start  -->
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#old_l11">
-                    Nipun Ny CSG Django V6 <span class="spanRight">Port : 8002, 8001, 8003</span>
-                </div>
-                <div id="old_l11" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6-frontend<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:8003
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 auth_service/manage.py runserver 0.0.0.0:8001
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 hrms_service/manage.py runserver 0.0.0.0:8002
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l1">Unicon International
-                    Dashboard <span class="spanRight">Port : 5000</span></div>
-                <div id="l1" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-international-dashboard
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">source env/bin/activate
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-international-dashboard<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:5000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l2">Unicon International
-                    I-API<span class="spanRight">Port : 7000</span></div>
-                <div id="l2" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-international-i-api
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">source env/bin/activate
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">python3 manage.py runserver 0.0.0.0:7000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">cd python_pro/unicon-international-i-api<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:7000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l3">Unicon International
-                    O-API<span class="spanRight">Port : 8000</span></div>
-                <div id="l3" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-internation-o-api<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:8000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-internation-o-api<br>
-                                source env/bin/activate<br>
-                                celery -A csg_payout worker -l info -Q csg_payout_queue --concurrency=6
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-internation-o-api<br>
-                                source env/bin/activate<br>
-                                celery -A csg_payout beat --loglevel=info
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l4">Unicon Scheduler <span
-                        class="spanRight">Port : 9000</span></div>
-                <div id="l4" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-scheduler<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:9000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-scheduler<br>
-                                source env/bin/activate<br>
-                                celery -A csg_scheduler worker -l info -Q csg_scheduler_queue --concurrency=6
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/unicon-scheduler<br>
-                                source env/bin/activate<br>
-                                celery -A csg_scheduler beat --loglevel=info
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l7">Nexus<span
-                        class="spanRight">Port : 8085</span></div>
-                <div id="l7" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/nexus
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">source env/bin/activate
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8085
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">cd python_pro/nexus<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:8085
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l20">Unicon Dashboard API Version
-                    6 <span class="spanRight">Port : 5000</span></div>
-                <div id="l20" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-dashboard-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:5000
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-dashboard-django-v6<br>
-                                source env/bin/activate<br>
-                                celery -A csg_dashboard worker -l info --concurrency=6
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-dashboard-django-v6<br>
-                                source env/bin/activate<br>
-                                celery -A csg_dashboard beat --loglevel=info
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#lp20">Unicon PayIn API Version 6
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#p16">Unicon Dashboard V2
                     <span class="spanRight">Port : 5000</span></div>
-                <div id="lp20" class="collapse mt-2">
+                <div id="p16" class="collapse mt-2">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-payin-django-v6<br>
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Dashboard-v2<br>
                                 source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:7000
+                                nohup python3 manage.py runserver 0.0.0.0:5000 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Dashboard-v2<br>
+                                source env/bin/activate<br>
+                                nohup celery -A csg_dashboard worker -l info --concurrency=6 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Dashboard-v2<br>
+                                source env/bin/activate<br>
+                                nohup celery -A csg_dashboard beat --loglevel=info > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
@@ -313,31 +108,48 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l8">Unicon Payout API Version 6
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#p17">Unicon Payin V2
+                    <span class="spanRight">Port : 5000</span></div>
+                <div id="p17" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Payin-v2<br>
+                                source env/bin/activate<br>
+                                nohup python3 manage.py runserver 0.0.0.0:7000 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#p18">Unicon Payout V2
                     <span class="spanRight">Port : 8000</span></div>
-                <div id="l8" class="collapse mt-2">
+                <div id="p18" class="collapse mt-2">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-payout-django-v6<br>
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Payout-v2<br>
                                 source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:8000
+                                nohup python3 manage.py runserver 0.0.0.0:8000 > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-payout-django-v6<br>
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Payout-v2<br>
                                 source env/bin/activate<br>
-                                celery -A csg_payout worker -l info -Q csg_payout_queue --concurrency=6
+                                nohup celery -A csg_payout worker -l info -Q csg_payout_queue --concurrency=6 >
+                                server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-12">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-payout-django-v6<br>
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Payout-v2<br>
                                 source env/bin/activate<br>
-                                celery -A csg_payout beat --loglevel=info
+                                nohup celery -A csg_payout beat --loglevel=info > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
@@ -345,31 +157,137 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l9">Unicon Scheduler Version
-                    6<span class="spanRight">Port : 9000</span></div>
-                <div id="l9" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#p19">Unicon Scheduler V2
+                    <span class="spanRight">Port : 9000</span></div>
+                <div id="p19" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Scheduler-v2<br>
+                                source env/bin/activate<br>
+                                nohup python3 manage.py runserver 0.0.0.0:9000 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Scheduler-v2<br>
+                                source env/bin/activate<br>
+                                nohup celery -A csg_scheduler worker -l info -Q csg_scheduler_queue --concurrency=6 >
+                                server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v2/Scheduler-v2<br>
+                                source env/bin/activate<br>
+                                nohup celery -A csg_scheduler beat --loglevel=info > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- V1 Unicon End  -->
+            <!-- API Gateway Start-->
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_apigateway">API FateWay <span class="spanRight">Port : 8800</span></div>
+                <div id="dg_apigateway" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-scheduler-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:9000
+                                cd /mnt/mydata/python/github_pro/API-Gateway
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-scheduler-django-v6<br>
+                                source env/bin/activate<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                nohup python3 manage.py runserver 0.0.0.0:8800 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/API-Gateway<br>
                                 source env/bin/activate<br>
-                                celery -A csg_scheduler worker -l info -Q csg_scheduler_queue --concurrency=6
+                                nohup python3 manage.py runserver 0.0.0.0:8800 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- API Gateway Emc-->
+             <!-- UPI Watchdog Start-->
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_upi_watchdog">UPI-Watchdog <span class="spanRight">Port : 8008</span></div>
+                <div id="dg_upi_watchdog" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/UPI-Watchdog
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-scheduler-django-v6<br>
+                                source env/bin/activate<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                nohup python3 manage.py runserver 0.0.0.0:8008 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/UPI-Watchdog<br>
                                 source env/bin/activate<br>
-                                celery -A csg_scheduler beat --loglevel=info
+                                nohup python3 manage.py runserver 0.0.0.0:8008 > server.log 2>&1 &
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- API UPI Watchdog Emc-->
+            <!-- V1 Unicon Start -->
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_unicon_dash_v1">Unicon Dashboard V1 <span class="spanRight">Port : 5200</span></div>
+                <div id="dg_unicon_dash_v1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Dashboard-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                source env/bin/activate <button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                nohup python3 manage.py runserver 0.0.0.0:5200 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Dashboard-v1<br>
+                                source env/bin/activate<br>
+                                nohup python3 manage.py runserver 0.0.0.0:5200 > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
@@ -377,15 +295,32 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l14">Unicon Dashboard API Version
-                    6.1</div>
-                <div id="l14" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_unicon_payin_v1">Unicon Payin V1 <span class="spanRight">Port : 7200</span></div>
+                <div id="dg_unicon_payin_v1" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6.1/unicon-dashboard-django-v6<br>
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Payin-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                source env/bin/activate<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                nohup python3 manage.py runserver 0.0.0.0:7200 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Payin-v1<br>
                                 source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:5000<br>
+                                nohup python3 manage.py runserver 0.0.0.0:7200 > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
@@ -393,31 +328,32 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l11">Nipun Ny CSG Django V6<span
-                        class="spanRight">Port : 8002, 8001, 8003</span></div>
-                <div id="l11" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_unicon_payout_v1">Unicon Payout V1 <span class="spanRight">Port : 82000</span></div>
+                <div id="dg_unicon_payout_v1" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6-frontend<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:8003
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Payout-v1
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 auth_service/manage.py runserver 0.0.0.0:8001
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                                source env/bin/activate<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/nipunByCsgV6/nipunbycsg-django-v6<br>
+                                nohup python3 manage.py runserver 0.0.0.0:82000 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Payout-v1<br>
                                 source env/bin/activate<br>
-                                python3 hrms_service/manage.py runserver 0.0.0.0:8002
+                                nohup python3 manage.py runserver 0.0.0.0:82000 > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
@@ -425,42 +361,41 @@
                 </div>
             </div>
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l13">Unicon Simulator<span
-                        class="spanRight">Port : 8004</span></div>
-                <div id="l13" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#dg_unicon_scheduler_v1">Unicon Scheduler API V1<span class="spanRight">Port : 92000</span></div>
+                <div id="dg_unicon_scheduler_v1" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-simulator<br>
-                                source env/bin/activate<br>
-                                python manage.py runserver 0.0.0.0:8004
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Scheduler-v1
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-simulator<br>
-                                source env/bin/activate<br>
-                                celery -A simulator beat --loglevel=info --scheduler
-                                django_celery_beat.schedulers:DatabaseScheduler
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                                source env/bin/activate<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6/unicon-simulator<br>
+                                nohup python3 manage.py runserver 0.0.0.0:92000 > server.log 2>&1 &<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="code-box">
+                                cd /mnt/mydata/python/github_pro/unicon/v1/Scheduler-v1<br>
                                 source env/bin/activate<br>
-                                celery -A simulator worker -l info -Q payin,payout,status,exports,maintenance
-                                --concurrency=4
+                                nohup python3 manage.py runserver 0.0.0.0:92000 > server.log 2>&1 &
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- V1 Unicon Emd -->
         </div>
     </div>
-
     <footer class="text-center mt-5">
         © 2026 Local Development Dashboard — Organized by Ashok Sharma
     </footer>

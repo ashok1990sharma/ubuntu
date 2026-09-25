@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="top-navbar mb-4">
         <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
@@ -22,6 +26,7 @@
                     <a href="index.html" class="nav-link-btn ">Home</a>
                     <a href="quick-reference.html" class="nav-link-btn ">Quick Ref</a>
                     <a href="desktop-projects.html" class="nav-link-btn ">Desktop</a>
+                    <a href="desktop-github-projects.html" class="nav-link-btn">Desktop GitHub</a>
                     <a href="local-projects.html" class="nav-link-btn ">Local</a>
                     <a href="github-projects.html" class="nav-link-btn active">GitHub</a>
                     <a href="old-projects.html" class="nav-link-btn ">Old Projects</a>
@@ -44,19 +49,22 @@
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
                     <h3 class="fw-bold mb-1">🛠️ GitHub Projects</h3>
-                    <p class="text-secondary small mb-0">Version-controlled GitHub repositories (Finsol V1/V2, FDIZone, PayProtect, Watchdog)</p>
+                    <p class="text-secondary small mb-0">Version-controlled GitHub repositories (Finsol V1/V2, FDIZone,
+                        PayProtect, Watchdog)</p>
                 </div>
                 <div class="d-flex gap-2">
-                    <button class="action-btn" onclick="expandAll()"><i class="fa-solid fa-angles-down me-1"></i> Expand All</button>
-                    <button class="action-btn" onclick="collapseAll()"><i class="fa-solid fa-angles-up me-1"></i> Collapse All</button>
+                    <button class="action-btn" onclick="expandAll()"><i class="fa-solid fa-angles-down me-1"></i> Expand
+                        All</button>
+                    <button class="action-btn" onclick="collapseAll()"><i class="fa-solid fa-angles-up me-1"></i>
+                        Collapse All</button>
                 </div>
             </div>
             <div class="search-input-group">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" id="dashboardSearch" class="form-control search-input" 
-                       placeholder="Search projects or commands in 🛠️ GitHub Projects..." 
-                       oninput="filterPage()">
-                <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()"><i class="fa-solid fa-xmark"></i></button>
+                <input type="text" id="dashboardSearch" class="form-control search-input"
+                    placeholder="Search projects or commands in 🛠️ GitHub Projects..." oninput="filterPage()">
+                <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()"><i
+                        class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
 
@@ -67,405 +75,421 @@
 
         <div class="table-container border rounded-3 p-3">
             <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV1">Unicon International Dashboard V1 <span class="spanRight">Port : 5000</span></div>
-                                    <div id="hubDashV1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Dashboard-v1
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Dashboard-v1<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:5000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayinV1">Unicon International Payin V1 <span class="spanRight">Port : 7000</span></div>
-                                    <div id="hubPayinV1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Payin-v1
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:7000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Payin-v1<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:7000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayoutV1">Unicon International Payout V1 <span class="spanRight">Port : 8000</span></div>
-                                    <div id="hubPayoutV1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Payout-v1
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Payout-v1<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubSchedulerV1">Unicon International Scheduler V1 <span class="spanRight">Port : 9000</span></div>
-                                    <div id="hubSchedulerV1" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Scheduler-v1
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:9000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v1/Scheduler-v1<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:9000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV2">Unicon International Dashboard V2 <span class="spanRight">Port : 5000</span></div>
-                                    <div id="hubDashV2" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Dashboard-v2
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Dashboard-v2<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:5000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayinV2">Unicon International Payin V2<span class="spanRight">Port : 7000</span></div>
-                                    <div id="hubPayinV2" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Payin-v2
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:7000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Payin-v2<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:7000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayoutV2">Unicon International Payout V2<span class="spanRight">Port : 8000</span></div>
-                                    <div id="hubPayoutV2" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Payout-v2
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Payout-v2<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubschedulerV2">Unicon International Scheduler V2<span class="spanRight">Port : 9000</span></div>
-                                    <div id="hubschedulerV2" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Scheduler-v2
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:9000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Finsol-PG/v2/Scheduler-v2<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:9000
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubFDIZoneBackend">FDIZone Backend <span class="spanRight">Port : 6000</span></div>
-                                    <div id="hubFDIZoneBackend" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/FDIZone/backend
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8007
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/FDIZone/backend<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8007
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayProtectApp">Pay-Protect APP <span class="spanRight">Port : 6100</span></div>
-                                    <div id="hubPayProtectApp" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Pay-Protect/app
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:6100
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/Pay-Protect/app<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:6100
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubAshok">Ashok Project<span class="spanRight">Port : 8400</span></div>
-                                    <div id="hubAshok" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/ashok
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">source env/bin/activate
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">python3 manage.py runserver 0.0.0.0:8400
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">cd github-pro/ashok<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8400<button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV1">Unicon International
+                    Dashboard V1 <span class="spanRight">Port : 5000</span></div>
+                <div id="hubDashV1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Dashboard-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Dashboard-v1<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:5000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayinV1">Unicon International
+                    Payin V1 <span class="spanRight">Port : 7000</span></div>
+                <div id="hubPayinV1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Payin-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:7000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Payin-v1<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:7000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayoutV1">Unicon International
+                    Payout V1 <span class="spanRight">Port : 8000</span></div>
+                <div id="hubPayoutV1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Payout-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Payout-v1<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:8000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubSchedulerV1">Unicon
+                    International Scheduler V1 <span class="spanRight">Port : 9000</span></div>
+                <div id="hubSchedulerV1" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Scheduler-v1
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:9000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v1/Scheduler-v1<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:9000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubDashV2">Unicon International
+                    Dashboard V2 <span class="spanRight">Port : 5000</span></div>
+                <div id="hubDashV2" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Dashboard-v2
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:5000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Dashboard-v2<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:5000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayinV2">Unicon International
+                    Payin V2<span class="spanRight">Port : 7000</span></div>
+                <div id="hubPayinV2" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Payin-v2
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:7000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Payin-v2<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:7000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayoutV2">Unicon International
+                    Payout V2<span class="spanRight">Port : 8000</span></div>
+                <div id="hubPayoutV2" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Payout-v2
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Payout-v2<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:8000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubschedulerV2">Unicon
+                    International Scheduler V2<span class="spanRight">Port : 9000</span></div>
+                <div id="hubschedulerV2" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Scheduler-v2
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:9000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Finsol-PG/v2/Scheduler-v2<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:9000
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubFDIZoneBackend">FDIZone
+                    Backend <span class="spanRight">Port : 6000</span></div>
+                <div id="hubFDIZoneBackend" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/FDIZone/backend
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8007
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/FDIZone/backend<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:8007
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubPayProtectApp">Pay-Protect APP
+                    <span class="spanRight">Port : 6100</span></div>
+                <div id="hubPayProtectApp" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Pay-Protect/app
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:6100
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/Pay-Protect/app<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:6100
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#hubAshok">Ashok Project<span
+                        class="spanRight">Port : 8400</span></div>
+                <div id="hubAshok" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/ashok
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8400
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">cd github-pro/ashok<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:8400<button class="btn btn-light btn-sm copy-btn"
+                                    onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#nds">UPI Watch Dog(Negative Database System) <span class="spanRight">Port : 8008</span></div>
-                                    <div id="nds" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">
-                                                    cd github-pro/UPI-Watchdog/backend<br>
-                                                    source env/bin/activate<br>
-                                                    python3 manage.py runserver 0.0.0.0:8008<br>
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#nds">UPI Watch Dog(Negative
+                    Database System) <span class="spanRight">Port : 8008</span></div>
+                <div id="nds" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/UPI-Watchdog/backend
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">python3 manage.py runserver 0.0.0.0:8008
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/UPI-Watchdog/backend<br>
+                                source env/bin/activate<br>
+                                python3 manage.py runserver 0.0.0.0:8008<br>
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#api_gw">API-Gateway
+                    <span class="spanRight">Port : 8009</span></div>
+                <div id="api_gw" class="collapse mt-2">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/API-Gateway
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">source env/bin/activate
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">uvicorn app.main:app --reload --port 8009 --host 0.0.0.0
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">
+                                cd github-pro/API-Gateway<br>
+                                source env/bin/activate<br>
+                                uvicorn app.main:app --reload --port 8009 --host 0.0.0.0<br>
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -486,20 +510,20 @@
             let clone = btn.parentElement.cloneNode(true);
             let btnInClone = clone.querySelector('button');
             if (btnInClone) btnInClone.remove();
-            let text = clone.innerText.trim();
+            let rawText = clone.innerText || clone.textContent;
+            let lines = rawText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+            let text = lines.join('\n');
 
             function notifySuccess() {
                 let origText = btn.innerHTML;
                 btn.classList.add('copied');
                 btn.innerHTML = '<i class="fa-solid fa-check me-1"></i> Copied!';
                 showToast('Copied to clipboard!');
-
                 setTimeout(() => {
                     btn.classList.remove('copied');
                     btn.innerHTML = origText;
                 }, 1500);
             }
-
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(text).then(notifySuccess).catch(err => {
                     fallbackCopy(text, notifySuccess);
@@ -541,10 +565,8 @@
             const query = input.value.toLowerCase().trim();
             const clearBtn = document.getElementById('clearSearchBtn');
             if (clearBtn) clearBtn.style.display = query ? 'block' : 'none';
-
             const projectItems = document.querySelectorAll('.mb-2, .mb-3');
             let matchCount = 0;
-
             projectItems.forEach(item => {
                 const textContent = item.innerText.toLowerCase();
                 if (!query || textContent.includes(query)) {
@@ -553,14 +575,15 @@
                     if (query) {
                         const collapseTarget = item.querySelector('.collapse');
                         if (collapseTarget && !collapseTarget.classList.contains('show')) {
-                            new bootstrap.Collapse(collapseTarget, { show: true });
+                            new bootstrap.Collapse(collapseTarget, {
+                                show: true
+                            });
                         }
                     }
                 } else {
                     item.style.display = 'none';
                 }
             });
-
             const noResults = document.getElementById('noResults');
             if (noResults) noResults.style.display = (query && matchCount === 0) ? 'block' : 'none';
         }
@@ -575,13 +598,17 @@
 
         function expandAll() {
             document.querySelectorAll('.project-header + .collapse').forEach(el => {
-                new bootstrap.Collapse(el, { show: true });
+                new bootstrap.Collapse(el, {
+                    show: true
+                });
             });
         }
 
         function collapseAll() {
             document.querySelectorAll('.project-header + .collapse.show').forEach(el => {
-                new bootstrap.Collapse(el, { hide: true });
+                new bootstrap.Collapse(el, {
+                    hide: true
+                });
             });
         }
 
@@ -595,12 +622,11 @@
         function updateThemeBtn(isDark) {
             const btn = document.getElementById('themeBtn');
             if (btn) {
-                btn.innerHTML = isDark ? 
-                    '<i class="fa-solid fa-sun me-1 text-warning"></i> Light Mode' : 
+                btn.innerHTML = isDark ?
+                    '<i class="fa-solid fa-sun me-1 text-warning"></i> Light Mode' :
                     '<i class="fa-solid fa-moon me-1"></i> Dark Mode';
             }
         }
-
         (function initTheme() {
             const saved = localStorage.getItem('theme');
             if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -613,7 +639,7 @@
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("GET", "./", true, "logout", "wrong_password");
             xmlhttp.send("");
-            xmlhttp.onreadystatechange = function () {
+            xmlhttp.onreadystatechange = function() {
                 if (xmlhttp.readyState == 4) {
                     window.location.reload();
                 }
@@ -621,4 +647,5 @@
         }
     </script>
 </body>
+
 </html>

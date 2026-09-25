@@ -22,6 +22,7 @@
                     <a href="index.html" class="nav-link-btn ">Home</a>
                     <a href="quick-reference.html" class="nav-link-btn ">Quick Ref</a>
                     <a href="desktop-projects.html" class="nav-link-btn ">Desktop</a>
+                    <a href="desktop-github-projects.html" class="nav-link-btn">Desktop GitHub</a>
                     <a href="local-projects.html" class="nav-link-btn ">Local</a>
                     <a href="github-projects.html" class="nav-link-btn ">GitHub</a>
                     <a href="old-projects.html" class="nav-link-btn ">Old Projects</a>
@@ -137,31 +138,6 @@
                                                 </div>
                                             </div>
                                             
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="project-header" data-bs-toggle="collapse" data-bs-target="#Redis">Redis</div>
-                                    <div id="Redis" class="collapse mt-2">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="code-box">sudo service redis-server start
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">redis-cli ping
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <div class="code-box">ps aux | grep redis
-                                                    <button class="btn btn-light btn-sm copy-btn"
-                                                        onclick="copy(this)">Copy</button>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -628,7 +604,9 @@
             let clone = btn.parentElement.cloneNode(true);
             let btnInClone = clone.querySelector('button');
             if (btnInClone) btnInClone.remove();
-            let text = clone.innerText.trim();
+            let rawText = clone.innerText || clone.textContent;
+            let lines = rawText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+            let text = lines.join('\n');
 
             function notifySuccess() {
                 let origText = btn.innerHTML;
