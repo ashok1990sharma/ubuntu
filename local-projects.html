@@ -74,38 +74,46 @@
         </div>
 
         <div class="table-container border rounded-3 p-3">
-
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l10">PG Testing (Laravel)<span
-                        class="spanRight">Port : 8200</span></div>
-                <div id="l10" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l14">Orivo Backend Python</div>
+                <div id="l14" class="collapse mt-2">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="code-box">
-                                cd /var/www/html/pg_testing/
+                                cd python_pro/orivo-backend-python<br>
+                                source env/bin/activate<br>
+                                python3 auth_service/manage.py runserver 0.0.0.0:8001 <br>
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">--
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                cd python_pro/orivo-backend-python<br>
+                                source env/bin/activate<br>
+                                python3 hrms_service/manage.py runserver 0.0.0.0:8002<br>
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">php artisan serve --host 0.0.0.0 --port 8200
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                cd python_pro/orivo-backend-python<br>
+                                source env/bin/activate<br>
+                                python3 opportunity_services/manage.py runserver 0.0.0.0:8003<br>
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-lg-4">
-                            <div class="code-box">cd /var/www/html/pg_testing/<br>
-                                php artisan serve --host 0.0.0.0 --port 8200<button
-                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                        <div class="col-lg-6">
+                            <div class="code-box">
+                                cd python_pro/orivo-backend-python<br>
+                                source env/bin/activate<br>
+                                python3 recruitment/manage.py runserver 0.0.0.0:8004<br>
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
+            
             <div class="mb-3">
                 <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l6">Nipun by CSG <span
                         class="spanRight">Port : 8084</span></div>
@@ -137,37 +145,8 @@
                     </div>
                 </div>
             </div>
-
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l12">Postgress Connection</div>
-                <div id="l12" class="collapse mt-2">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                sudo -u postgres psql<br>
-                                1001<br>
-                                SHOW max_connections;<br>
-                                \q<br>
-                                sudo systemctl restart postgresql<br>
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="code-box">
-                                https://grok.com/?_s=home<br>
-                                Email: sharma.90.ashok@gmail.com<br>
-                                Password : msksksas@8956
-                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l15">Caresuite Backend</div>
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l15">Caresuite Backend(Doctor Patient)</div>
                 <div id="l15" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
@@ -181,19 +160,35 @@
                     </div>
                 </div>
             </div>
+            
             <div class="mb-3">
-                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l14">Unicon Dashboard API Version
-                    6.1</div>
-                <div id="l14" class="collapse mt-2">
+                <div class="project-header" data-bs-toggle="collapse" data-bs-target="#l10">PG Testing (Laravel)<span
+                        class="spanRight">Port : 8200</span></div>
+                <div id="l10" class="collapse mt-2">
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="code-box">
-                                cd python_pro/version_6/v6.1/unicon-dashboard-django-v6<br>
-                                source env/bin/activate<br>
-                                python3 manage.py runserver 0.0.0.0:5000<br>
+                                cd /var/www/html/pg_testing/
                                 <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
                             </div>
                         </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">--
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">php artisan serve --host 0.0.0.0 --port 8200
+                                <button class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="code-box">cd /var/www/html/pg_testing/<br>
+                                php artisan serve --host 0.0.0.0 --port 8200<button
+                                    class="btn btn-light btn-sm copy-btn" onclick="copy(this)">Copy</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
